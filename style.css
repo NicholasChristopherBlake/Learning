@@ -1,0 +1,63 @@
+/*# 
+- Mobile: 375px
+- Desktop: 1440px
+
+- Orange: hsl(25, 97%, 53%)
+
+- White: hsl(0, 0%, 100%)
+- Light Grey: hsl(217, 12%, 63%)
+- Medium Grey: hsl(216, 12%, 54%)
+- Dark Blue: hsl(213, 19%, 18%)
+- Very Dark Blue: hsl(216, 12%, 8%)
+
+- Font size (paragraph): 15px
+
+font-family: 'Overpass', sans-serif;
+*/
+body {
+  margin: 0;
+  padding: 0;
+  background: hsl(216, 12%, 8%);
+  font-family: 'Overpass', sans-serif;
+  color: white;
+}
+
+.container {
+  padding: 1rem;
+  background-color: hsl(213, 19%, 18%);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5;
+  width: 300px;
+  margin: 20vh auto;
+}
+.container p {
+  font-size: 15px;
+  color: hsl(217, 12%, 63%);
+}
+
+.circle {
+  border-radius: 50%;
+  padding: 5px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  background-color: hsl(216, 12%, 54%)
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit {
+  background-color: hsl(25, 97%, 53%);
+  border: none;
+  border-radius: 15px;
+  color: hsl(0, 0%, 100%);
+  padding: 5px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
