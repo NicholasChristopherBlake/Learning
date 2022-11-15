@@ -15,12 +15,12 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Screenshot
 
-![](./screenshot.PNG)
+![](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://nicholaschristopherblake.github.io/QR-Code-Challenge/)
+- Solution URL: [](https://www.frontendmentor.io/solutions/qr-code-using-flexbox-S3T4tNY-7x)
+- Live Site URL: [](https://nicholaschristopherblake.github.io/QR-Code-Challenge/)
 
 ## My process
 
