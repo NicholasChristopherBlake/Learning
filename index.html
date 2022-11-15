@@ -15,43 +15,45 @@
 
 </head>
 <body>
+  <!-- Rating state start -->
   <main>
-    <div class="container">
-      <img id="icon" class="circle" src="./images/icon-star.svg" alt="Star Icon">
+    <div class="container" id="state1">
+      <div class="circle">
+        <img id="icon" src="./images/icon-star.svg" alt="Star Icon">
+      </div>
       <h1>How did we do?</h1>
       <p>Please let us know how we did with your support request. All feedback is appreciated 
         to help us improve our offering!</p>
-      <div class="numbers">
-        <p class="circle">1</p>
-        <p class="circle">2</p>
-        <p class="circle">3</p>
-        <p class="circle">4</p>
-        <p class="circle">5</p>
-      </div>
-      <button class="submit">SUBMIT</button>
+      <form>
+        <div class="numbers">
+          <p class="circle" value="1" state="0">1</p>
+          <p class="circle" value="2" state="0">2</p>
+          <p class="circle" value="3" state="0">3</p>
+          <p class="circle" value="4" state="0">4</p>
+          <p class="circle" value="5" state="0">5</p>
+        </div>
+        <button id="submit" type="submit">SUBMIT</button>
+      </form>
     </div>
   </main>
-  <!-- Rating state start -->
-
   <!-- Rating state end -->
-
   <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
+  <aside>
+    <div class="container2" id="state2" style="display: none">
+      <img id="thank-you" src="images/illustration-thank-you.svg" alt="Review Icon">
+      <p class="oval">You selected <span id="value"></span> out of 5</p>
+      <h1>Thank you!</h1>
+      <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+    </div>
+  </aside>
   <!-- Thank you state end -->
-
-  
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/NicholasChristopherBlake">Nicholas</a>.
+    </div>
+  </footer>
   <script src="./script.js" type="text/javascript"></script>
 </body>
 </html>

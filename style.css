@@ -23,39 +23,97 @@ body {
 }
 
 .container {
-  padding: 1rem;
-  background-color: hsl(213, 19%, 18%);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 5;
+  position: relative;
+  top: 10vh;
+  margin: auto;
+  padding: 2rem;
+  background-color: hsla(213, 20%, 18%, 0.7);
   width: 300px;
   margin: 20vh auto;
+  border-radius: 20px;
 }
-.container p {
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+p {
   font-size: 15px;
+  font-weight: 400;
   color: hsl(217, 12%, 63%);
 }
 
 .circle {
   border-radius: 50%;
-  padding: 5px;
-  width: 18px;
-  height: 18px;
+  padding: 12px 6px 0px 6px;
+  width: 30px;
+  height: 30px;
+  background-color: hsl(213, 19%, 18%);
   text-align: center;
-  background-color: hsl(216, 12%, 54%)
+  vertical-align: middle;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+p[state="0"] {
+  background-color: hsl(213, 19%, 18%);
+  color: hsl(217, 12%, 63%);
+}
+p[state="1"] {
+  color: hsl(0, 0%, 100%);
+  background-color:hsl(25, 97%, 53%);
+}
+p[state="0"]:hover {
+  background-color:hsl(217, 12%, 63%);
+  color:hsl(0, 0%, 100%);
+}
+
+.numbers .circle:active {
+  background-color:hsl(25, 97%, 53%);
+  color:hsl(0, 0%, 100%);
 }
 
 .numbers {
   display: flex;
   justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 0.7rem;
 }
 
-.submit {
+#submit {
   background-color: hsl(25, 97%, 53%);
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
   color: hsl(0, 0%, 100%);
-  padding: 5px;
+  font-family: 'Overpass', sans-serif;
+  padding: 13px 120px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-top: 0;
+  cursor: pointer;
+  display: block;
+}
+
+#submit:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 97%, 53%);
+}
+
+#thank-you {
+  margin: auto;
+}
+
+.oval {
+  display: inline-block;
+  color:hsla(25, 100%, 56%, 0.85);
+  font-size: 15px;
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: hsl(213, 19%, 20%);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
 .attribution { font-size: 11px; text-align: center; }
