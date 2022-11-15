@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/interactive-rating-component-with-js-Pzpadku2CL)
-- Live Site URL: [Add live site URL here](https://nicholaschristopherblake.github.io/Interactive-Rating-Component/)
+- Solution URL: https://www.frontendmentor.io/solutions/interactive-rating-component-with-js-Pzpadku2CL
+- Live Site URL: https://nicholaschristopherblake.github.io/Interactive-Rating-Component/
 
 ## My process
 
