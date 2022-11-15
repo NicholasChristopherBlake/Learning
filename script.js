@@ -31,7 +31,7 @@ submitBtn.onclick = () => {
   let container = document.getElementById('state1')
   let container2 = document.getElementById('state2')
   container.innerHTML = container2.innerHTML
-  let ratingElement = document.getElementById('rating');
+  let ratingElement = document.getElementById('value');
   ratingElement.innerText = rating;
   container.setAttribute('style', "text-align: center;")
 }
