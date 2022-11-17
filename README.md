@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/interactive-rating-component-with-js-Pzpadku2CL
-- Live Site URL: https://nicholaschristopherblake.github.io/Interactive-Rating-Component/
+- Solution URL: https://www.frontendmentor.io/solutions/preview-card-component-with-css-wJiEw2jafc
+- Live Site URL: https://nicholaschristopherblake.github.io/Preview-Card-Component/
 
 ## My process
 
