@@ -70,7 +70,7 @@ header {
 
 /* Main Part */
 /* Section 1 */
-.section1 h1 {
+.section1 h2 {
     line-height: 100%;
     color: hsl(240, 100%, 5%);
   }
@@ -175,7 +175,7 @@ hr {
     cursor: pointer;
   }
   /* NAVBAR HIDDEN */
-  navbar {
+  #navbar {
     display: var(--styleMenu);
     position: fixed;
     right: 0;
@@ -217,7 +217,7 @@ hr {
 
   /* Main Page Content */
   /* Section 1 */
-  .section1 h1 {
+  .section1 h2 {
     font-weight: 800;
     font-size: 40px;
   }
@@ -287,7 +287,7 @@ hr {
     column-gap: 3rem;
     margin-top: 1.5rem;
   }
-  .section1 h1 {
+  .section1 h2 {
     font-weight: 700;
     font-size: 54px;
   }
