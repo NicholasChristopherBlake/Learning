@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/preview-card-component-with-css-wJiEw2jafc
-- Live Site URL: https://nicholaschristopherblake.github.io/Preview-Card-Component/
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-news-homepage-for-mobile-and-desktop-w2tk8Fj7Qu
+- Live Site URL: https://nicholaschristopherblake.github.io/News-Homepage/
 
 ## My process
 
