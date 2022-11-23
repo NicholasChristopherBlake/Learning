@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/responsive-news-homepage-for-mobile-and-desktop-w2tk8Fj7Qu
-- Live Site URL: https://nicholaschristopherblake.github.io/News-Homepage/
+- Solution URL: https://www.frontendmentor.io/solutions/notifications-page-with-css-9nEUaoKNYj
+- Live Site URL: https://nicholaschristopherblake.github.io/Notifications-Page/
 
 ## My process
 
