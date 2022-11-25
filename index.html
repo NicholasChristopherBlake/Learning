@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style-mobile.css">
+  <link rel="stylesheet" href="./style-desktop.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+<body>
+
+  <header>
+    <div class="side">
+      <img id="menu" class="icon" src="./images/icon-menu.svg" alt="Menu">
+      <img id="logo" src="./images/logo.svg" alt="Logo">
+      
+      <nav>
+        <img id="menu-close" class="icon" src="./images/icon-close.svg" alt="Close Menu">
+        <div id="overlay"></div>
+        <div class="nav-list">
+          <ul>
+            <li><a href="">Collections</a></li>
+            <li><a href="">Men</a></li>
+            <li><a href="">Women</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="side">
+      <div class="cart-icons-div">
+        <img id="cart-icon" class="icon" src="./images/icon-cart.svg" alt="Cart Icon">
+        <p id="cart-items-number"></p>
+      </div>
+
+      <div id="cart">
+        <div id="top-cart">
+          <h2>Cart</h2>
+        </div>
+        <div id="bottom-cart">
+          <div class="empty-cart-div">
+            <p>Your cart is empty.</p>
+          </div>
+          <div class="cart-full-mobile">            
+            <div class="cart-full-top">
+              <img class="cart-image" src="./images/image-product-1-thumbnail.jpg" alt="Item in Cart">
+              <div class="cart-center">
+                <p>Autumn Limited Edition...</p>
+                <p class="prices-cart"><span class="price"></span> x <span class="number"></span><span class="final-price"></span></p>
+              </div>
+              <img id="delete-icon" src="./images/icon-delete.svg" alt="Icon Delete Item">
+            </div>
+            <button id="checkout">Checkout</button>
+          </div>
+        </div>
+      </div>
+
+      <img class="avatar" src="./images/image-avatar.png" alt="Avatar">
+    </div>
+  </header>
+
+  <main>
+    <div class="images">
+      <div class="main-carousel">
+        <ul class="main-carousel-ul">
+          <li class="main-carousel-slide current-main-slide">
+            <img class="main-carousel-image" src="./images/image-product-1.jpg" alt=""> 
+          </li>
+          <li class="main-carousel-slide">
+            <img class="main-carousel-image" src="./images/image-product-2.jpg" alt=""> 
+          </li>
+          <li class="main-carousel-slide">
+            <img class="main-carousel-image" src="./images/image-product-3.jpg" alt=""> 
+          </li>
+          <li class="main-carousel-slide">
+            <img class="main-carousel-image" src="./images/image-product-4.jpg" alt=""> 
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-carousel-nav">
+        <ul class="main-carousel-nav-ul">
+          <li class="main-carousel-nav-slide current-main-slide">
+            <img class="main-carousel-nav-image" src="./images/image-product-1-thumbnail.jpg" alt="">
+          </li>
+          <li class="main-carousel-nav-slide">
+            <img class="main-carousel-nav-image" src="./images/image-product-2-thumbnail.jpg" alt="">
+          </li>
+          <li class="main-carousel-nav-slide">
+            <img class="main-carousel-nav-image" src="./images/image-product-3-thumbnail.jpg" alt="">
+          </li>
+          <li class="main-carousel-nav-slide">
+            <img class="main-carousel-nav-image" src="./images/image-product-4-thumbnail.jpg" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="carousel">
+      <img id="btn-left" class="carousel-change-btn left" src="./images/icon-previous.svg" alt="Icon Previous Image">
+      
+      <div class="carousel-container">
+        <ul class="carousel-ul">
+          <li class="carousel-slide current-slide">
+            <img class="carousel-image" src="./images/image-product-1.jpg" alt="Sneakers Image">
+          </li>
+          <li class="carousel-slide">
+            <img class="carousel-image" src="./images/image-product-2.jpg" alt="Sneakers Image">
+          </li>
+          <li class="carousel-slide">
+            <img class="carousel-image" src="./images/image-product-3.jpg" alt="Sneakers Image">
+          </li>
+          <li class="carousel-slide">
+            <img class="carousel-image" src="./images/image-product-4.jpg" alt="Sneakers Image">
+          </li>
+        </ul>
+      </div>
+
+      <img id="btn-right" class="carousel-change-btn right" src="./images/icon-next.svg" alt="Icon Next Image">
+    </div>
+
+    <div class="main-part">
+      <h2>SNEAKER COMPANY</h2>
+      <h1>Fall Limited Edition Sneakers</h1>
+      <p class="main-text">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      <div class="prices">
+        <div class="prices-left">
+          <p class="new-price">$<span class="new-price" id="new-price-num">125.00</span></p>
+          <p class="discount">50%</p>
+        </div>
+        <div>
+          <p class="old-price">$250.00</p>
+        </div>
+      </div>
+      <div class="change-items">
+        <img id="minus-item" src="./images/icon-minus.svg" alt="Icon Minus">
+        <p id="number-of-items">0</p>
+        <img id="plus-item" src="./images/icon-plus.svg" alt="Icon Plus">
+      </div>
+      <button class="add-cart">
+        <img class="btn-image" src="./images/icon-cart.svg" alt="Icon Cart">
+        Add to cart
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/NicholasChristopherBlake">Nicholas</a>.
+    </div>
+  </footer>
+
+  <script src="./javascript.js"></script>
+</body>
+</html>
