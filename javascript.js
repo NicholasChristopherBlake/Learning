@@ -1,7 +1,6 @@
 // The Game is 10 seconds long
 // How long the Mole appears - is RANDOM from 200 ms and 1 s
 const first = 0;
-const last = 1;
 
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
