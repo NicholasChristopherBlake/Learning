@@ -4,6 +4,7 @@ let startX;
 let scrollLeft;
 
 let startFirst;
+let emptyArray = [];
 
 // .active class slightly transforms
 
