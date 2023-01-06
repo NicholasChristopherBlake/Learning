@@ -3,6 +3,8 @@ let isDown = false; // our flag variable (clicking or not)
 let startX;
 let scrollLeft;
 
+let startFirst;
+
 // .active class slightly transforms
 
 slider.addEventListener('mousedown', (e) => {
