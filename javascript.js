@@ -9,6 +9,7 @@ let timeUp = false;
 let score = 0;
 
 let nonThing;
+let emptyArray = [];
 
 // Gives a random amount of time
 function randomTime(min, max) {
