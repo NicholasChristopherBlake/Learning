@@ -2,6 +2,8 @@ const speed = document.querySelector('.speed');
 const bar = speed.querySelector('.speed-bar');
 const video = document.querySelector('.flex');
 
+let videoPlayerArray;
+
 function handleMove(e) {
   const y = e.pageY - this.offsetTop;
   const percent = y / this.offsetHeight;
