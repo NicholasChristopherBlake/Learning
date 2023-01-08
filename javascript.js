@@ -1,4 +1,5 @@
 const first = 0;
+const second = 1;
 // Main 3 <li> elements - our nav sections
 const triggers = document.querySelectorAll('.cool > li');
 
