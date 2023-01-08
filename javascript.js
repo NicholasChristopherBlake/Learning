@@ -1,4 +1,3 @@
-
 // Main 3 <li> elements - our nav sections
 const triggers = document.querySelectorAll('.cool > li');
 
