@@ -1,4 +1,5 @@
 // Interactivity of Rating elements. Ability to choose one
+let takes = 0;
 
 let numbers = document.querySelectorAll(`p[class="circle"]`);
 let rating;
