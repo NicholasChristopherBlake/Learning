@@ -4,6 +4,10 @@ html {
   background: #ffc600;
 }
 
+.mole-second {
+  background-color: black;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
