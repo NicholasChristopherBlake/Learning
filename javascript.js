@@ -3,8 +3,6 @@ const timerDisplay = document.querySelector('.display__time-left');
 const endTime = document.querySelector('.display__end-time');
 const buttons = document.querySelectorAll('[data-time]');
 const timeLimit = 100;
-let first = 0;
-let secondTime = []
 
 function timer(seconds) {
   // Clear any existing timers
