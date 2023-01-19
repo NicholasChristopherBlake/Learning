@@ -36,7 +36,9 @@ function handleLeave() {
 
 }
 
-
+const newArray = [];
+triggers.forEach(trigger => trigger.addEventListener('mousemove', handleMove));
+let secondArray;
 
 triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
 triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave))
