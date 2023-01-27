@@ -3,10 +3,6 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
-.new-class {
-  color: black;
-}
-
 .container {
   background-color: hsl(0, 0%, 100%);
   border-radius: 18px;
