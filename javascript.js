@@ -8,8 +8,6 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 
-let new = 0;
-
 // Gives a random amount of time
 function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
