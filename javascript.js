@@ -38,3 +38,5 @@ function handleLeave() {
 
 triggers.forEach(trigger => trigger.addEventListener('mouseenter', handleEnter))
 triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave))
+
+triggers.forEach(trigger => trigger.addEventListener('mouseleave', handleLeave))
