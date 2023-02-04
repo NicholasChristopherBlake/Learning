@@ -1,6 +1,8 @@
 const speed = document.querySelector('.speed');
 const bar = speed.querySelector('.speed-bar');
 const video = document.querySelector('.flex');
+const takes = 0;
+
 
 function handleMove(e) {
   const y = e.pageY - this.offsetTop;
