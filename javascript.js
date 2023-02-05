@@ -4,6 +4,8 @@ const endTime = document.querySelector('.display__end-time');
 const buttons = document.querySelectorAll('[data-time]');
 const timeLimit = 100;
 
+const newArray=[]
+
 function timer(seconds) {
   // Clear any existing timers
   clearInterval(countdown);
