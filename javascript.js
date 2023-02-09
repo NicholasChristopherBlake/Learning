@@ -8,7 +8,7 @@ function addItem(e) {
   const text = (this.querySelector('[name=item]')).value;
   const item = {
     text,
-    done: false
+    done: true
   }
 
   items.push(item);
