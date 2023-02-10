@@ -1,5 +1,4 @@
 // Menu
-const menuIcon = document.getElementById('menu');
 
 const menuIcon = document.getElementById('menu');
 const menuIconClose = document.getElementById('menu-close');
