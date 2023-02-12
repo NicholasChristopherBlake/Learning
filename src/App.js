@@ -11,7 +11,7 @@ function App() {
       <Nav />
       <Header/>
       <Main/>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 }
