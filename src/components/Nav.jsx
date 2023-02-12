@@ -1,13 +1,10 @@
-import React from "react"
+import React from "react";
+import logo from "../assets/icons/Logo.svg"
 
 const Nav = () => {
   return (
     <nav>
-        <img src="../../public/icons/Logo.svg" alt=""/>
-        <img src="./Logo.svg" alt=""/>
-        <img src="../../public/images/Mario and Adrian A.jpg"/>
-        <img src="../../public/icons/Dish icon.svg"/>
-
+        <img src={logo}/>
         <ul>
           <li><a href=""></a>Home</li>
           <li><a href=""></a>About</li>
