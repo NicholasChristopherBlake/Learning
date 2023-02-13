@@ -8,10 +8,6 @@ html {
   box-sizing: inherit;
 }
 
-.new {
-   display: flex;
-  }
-
 body {
   min-height: 100vh;
   display: flex;
