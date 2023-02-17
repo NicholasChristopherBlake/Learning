@@ -4,10 +4,15 @@ import Footer from "../Footer";
 import Nav from "../Nav";
 
 const BookingPage = (props) => {
+
   return (
     <>
       <Nav />
-      <Booking />
+      <Booking
+      availableTimes={props.availableTimes}
+      dispatch={props.dispatch}
+      submitForm={props.submitForm}
+      />
       <Footer />
     </>
   )
