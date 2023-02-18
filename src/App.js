@@ -64,7 +64,9 @@ function App() {
         />} />
         <Route path="/confirmed" element={<ConfirmedBooking />} />
         <Route path="/error" element={<Error />} />
-        <Route element={<Navigate to="/error" replace/>} path="/*" />
+        <Route element={<Navigate to="/error" replace/>} path="/menu" />
+        <Route element={<Navigate to="/error" replace/>} path="/order" />
+        <Route element={<Navigate to="/error" replace/>} path="/login" />
       </Routes>
     </BrowserRouter>
   );
