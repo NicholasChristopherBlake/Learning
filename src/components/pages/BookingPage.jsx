@@ -9,9 +9,9 @@ const BookingPage = (props) => {
     <>
       <Nav />
       <Booking
-      availableTimes={props.availableTimes}
-      dispatch={props.dispatch}
-      submitForm={props.submitForm}
+        availableTimes={props.availableTimes}
+        dispatch={props.dispatch}
+        submitForm={props.submitForm}
       />
       <Footer />
     </>

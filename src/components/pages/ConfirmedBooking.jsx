@@ -6,7 +6,7 @@ const ConfirmedBooking = (props) => {
   return (
     <>
       <Nav />
-      <h1>Booking has been confirmed!</h1>
+        <h1 className="confirmed-booking">Thank you! Your booking has been confirmed!</h1>
       <Footer />
     </>
   )

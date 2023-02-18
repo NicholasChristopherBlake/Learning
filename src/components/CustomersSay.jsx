@@ -12,9 +12,9 @@ const CustomersSay = (props) => {
       <p className="title">Customers Say</p>
       <div className="ratings-container">
       <div className="ratings">
-        <p className="rating">5/5<img className="star" src={star}/></p>
+        <p className="rating">5/5<img className="star" src={star} alt=""/></p>
         <div className="customer-photo-row">
-          <img src={photo1}/>
+          <img src={photo1} alt=""/>
           <p className="customer-name">David</p>
         </div>
         <p className="review-text">
@@ -22,9 +22,9 @@ const CustomersSay = (props) => {
         </p>
       </div>
       <div className="ratings">
-        <p className="rating">4/5<img className="star" src={star}/></p>
+        <p className="rating">4/5<img className="star" src={star} alt=""/></p>
         <div className="customer-photo-row">
-          <img src={photo2}/>
+          <img src={photo2} alt=""/>
           <p className="customer-name">Monica</p>
         </div>
         <p className="review-text">
@@ -32,9 +32,9 @@ const CustomersSay = (props) => {
         </p>
       </div>
       <div className="ratings">
-        <p className="rating">5/5<img className="star" src={star}/></p>
+        <p className="rating">5/5<img className="star" src={star} alt=""/></p>
         <div className="customer-photo-row">
-          <img src={photo3}/>
+          <img src={photo3} alt=""/>
           <p className="customer-name">Kevin</p>
         </div>
         <p className="review-text">
@@ -42,9 +42,9 @@ const CustomersSay = (props) => {
         </p>
       </div>
       <div className="ratings">
-        <p className="rating">5/5<img className="star" src={star}/></p>
+        <p className="rating">5/5<img className="star" src={star} alt=""/></p>
         <div className="customer-photo-row">
-          <img src={photo4}/>
+          <img src={photo4} alt=""/>
           <p className="customer-name">Elisabeth</p>
         </div>
         <p className="review-text">
