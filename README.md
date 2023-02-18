@@ -1,5 +1,5 @@
 # To view the page open:
-[GitHub Page Little Lemon Website](https://nicholaschristopherblalke.github.io/little_lemon_capstone_project)
+[GitHub Page Little Lemon Website](https://nicholaschristopherblake.github.io/little_lemon_capstone_project)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
