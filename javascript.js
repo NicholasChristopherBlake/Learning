@@ -12,3 +12,5 @@ function unRead() {
 }
 
 allRead.addEventListener('click', unRead);
+allRead.addEventListener('click', unRead);
+
