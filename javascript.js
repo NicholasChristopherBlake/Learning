@@ -9,7 +9,6 @@ function unRead() {
     article.classList.remove('unread')
   });
   spans.forEach(span => span.innerText = '');
-  spans.forEach(span => span.innerText = '');
 }
 
 allRead.addEventListener('click', unRead);
