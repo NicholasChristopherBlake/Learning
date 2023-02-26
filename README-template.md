@@ -10,7 +10,7 @@ Users should be able to:
 ![](./screenshot.jpeg)
 
 ### Links
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/easybank-landing-page-4YB5y_lyHd](https://www.frontendmentor.io/solutions/easybank-landing-page-4YB5y_lyHd)
 - Live Site URL: [https://nicholaschristopherblake.github.io/Easybank_Landing_Page/](https://nicholaschristopherblake.github.io/Easybank_Landing_Page/)
 
 ### Built with
