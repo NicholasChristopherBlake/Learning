@@ -2,7 +2,6 @@
 
 let numbers = document.querySelectorAll(`p[class="circle"]`);
 let rating;
-let rating2;
 
 numbers.forEach(number => number.onclick = () => {
   if (number.getAttribute("pressed") == 0) {
