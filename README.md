@@ -44,4 +44,4 @@ Users should be able to:
 ## Author
 
 - Website - [Nicholas Christopher Blake](https://github.com/NicholasChristopherBlake)
-- Frontend Mentor - [@NicholasChristopherBlake](https://www.frontendmentor.io/profile/NicholasChristopherBlake)
+- Frontend Mentor - [@NicholasChristopherBlake](https://www.frontendmentor.io/profile/NicholasChristopherBlake).
