@@ -21,4 +21,4 @@ Users should be able to:
 - Mobile-first workflow
 - Sass
 
-- Website - [Nicholas C Blake](https://github.com/NicholasChristopherBlake).
+- Website - [Nicholas C Blake](https://github.com/NicholasChristopherBlake)
