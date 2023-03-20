@@ -7,6 +7,7 @@ const moles = document.querySelectorAll('.mole');
 let lastHole;
 let timeUp = false;
 let score = 0;
+let s;
 
 // Gives a random amount of time
 function randomTime(min, max) {
