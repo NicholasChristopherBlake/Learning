@@ -10,10 +10,11 @@ Redux Toolkit, RTK Query
 Sass, CSS modules
 Jest
 NextJS
-PWA
+PWA (?)
 React-hook-form, Yup
 Testing Library
 Storybook
+ESLint
 
 
 API
