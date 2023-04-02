@@ -20,6 +20,9 @@ export default function Home() {
           <Link href="/testapi">
             Test API
           </Link>
+          <Link href="/testkinopoisk">
+            Test Kinopoisk
+          </Link>
         </div>
       </main>
     </>
