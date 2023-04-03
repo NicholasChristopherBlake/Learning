@@ -16,7 +16,6 @@ Testing Library
 Storybook
 ESLint
 
-
 API
 Подробная документация https://kinopoisk.dev/documentation.html
 
