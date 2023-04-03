@@ -4,27 +4,18 @@
 Front-end приложение для поиска и просмотра фильмов. Демо: ...
 
 Стек технологий:
-React + React Hooks
-
-TypeScript
-
-Redux Toolkit, RTK Query
-
-Sass, CSS modules
-
-Jest
-
-NextJS
-
-PWA (?)
-
-React-hook-form, Yup
-
-Testing Library
-
-Storybook
-
-ESLint
+- React + React Hooks
+- Tailwind CSS
+- TypeScript
+- Redux Toolkit, RTK Query
+- Sass, CSS modules
+- Jest
+- NextJS
+- PWA (?)
+- React-hook-form, Yup
+- Testing Library
+- Storybook
+- ESLint
 
 API
 Подробная документация https://kinopoisk.dev/documentation.html
