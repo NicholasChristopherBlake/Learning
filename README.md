@@ -5,15 +5,25 @@ Front-end приложение для поиска и просмотра фил�
 
 Стек технологий:
 React + React Hooks
+
 TypeScript
+
 Redux Toolkit, RTK Query
+
 Sass, CSS modules
+
 Jest
+
 NextJS
+
 PWA (?)
+
 React-hook-form, Yup
+
 Testing Library
+
 Storybook
+
 ESLint
 
 API
