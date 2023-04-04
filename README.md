@@ -1,9 +1,11 @@
 # .
- Online Films App
+
+Online Films App
 
 Front-end приложение для поиска и просмотра фильмов. Демо: ...
 
 Стек технологий:
+
 - React + React Hooks
 - Tailwind CSS
 - TypeScript
@@ -15,11 +17,10 @@ Front-end приложение для поиска и просмотра фил�
 - React-hook-form, Yup
 - Testing Library
 - Storybook
-- ESLint
+- ESLint, Prettier
 
 API
 Подробная документация https://kinopoisk.dev/documentation.html
-
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
