@@ -8,7 +8,7 @@ const SlideImage = ({ src, alt }) => {
       height={300}
       src={src}
       alt={alt}
-      className="slide-image flex my-0 mx-auto max-h-[300px] w-[100%] object-contain"
+      className="slide-image flex my-0 max-h-[300px] object-contain"
     />
   );
 };

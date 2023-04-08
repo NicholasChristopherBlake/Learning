@@ -4,12 +4,14 @@ import Arrows from "./Arrows";
 import Dots from "./Dots";
 import { createContext } from "react";
 import { getNewFilms } from "./getNewFilms";
+import { getNewFilmInfo } from "./getNewFilmInfo";
 
 export const SliderContext = createContext(null);
 
 const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
   const [items, setItems] = useState([]);
   const [slide, setSlide] = useState(0);
+  const [info, setInfo] = useState([]);
   const [touchPosition, setTouchPosition] = useState(null);
 
   useEffect(() => {
@@ -18,7 +20,26 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
       setItems(response);
     };
     getData();
+    const getInfo = async () => {
+      console.log("id:", items[0]?.id);
+      const response = await getNewFilmInfo(items[0]?.id);
+      setInfo(response);
+    };
+    getInfo();
   }, []);
+
+  console.log("Items:", items);
+  console.log("Items id:", items[slide]?.id);
+  console.log("slide:", slide);
+
+  useEffect(() => {
+    const getInfo = async () => {
+      console.log("id:", items[slide]?.id);
+      const response = await getNewFilmInfo(items[slide]?.id);
+      setInfo(response);
+    };
+    getInfo();
+  }, [slide]);
 
   const changeSlide = (direction = 1) => {
     let slideNumber = 0;
@@ -64,8 +85,6 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
     };
   }, [items.length, slide]);
 
-  console.log("Items:", items);
-  console.log({ slide });
   return (
     <section>
       <h2>Your weekend buddy for this week</h2>
@@ -82,6 +101,7 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
             slidesCount: items.length,
             slideNumber: slide,
             items,
+            info,
           }}
         >
           <SlidesList />

@@ -1,9 +1,10 @@
 import Slide from "./Slide";
+import SlideInfo from "./SlideInfo";
 import { SliderContext } from "./NewFilmsSlider";
 import { useContext } from "react";
 
 const SlidesList = () => {
-  const { slideNumber, items } = useContext(SliderContext);
+  const { slideNumber, items, info } = useContext(SliderContext);
 
   return (
     <div
@@ -15,7 +16,7 @@ const SlidesList = () => {
     >
       {items.map((slide, index) => {
         console.log("SlideNumber", slideNumber);
-        return <Slide key={index} data={slide} />;
+        return <Slide key={index} data={slide} info={info} />;
       })}
     </div>
   );
