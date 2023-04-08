@@ -5,7 +5,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Button from "@/shared/ui/Button/Button";
 import Header from "@/widgets/Header";
-import NewFilmsSlider from "@/widgets/NewFilmsSlider";
+import NewFilmsSlider from "@/widgets/NewFilmsSlider.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 

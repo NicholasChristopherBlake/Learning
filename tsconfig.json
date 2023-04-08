@@ -18,6 +18,18 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/widgets/Arrows.jsx",
+    "src/widgets/SlideTitle.jsx",
+    "src/widgets/SlidesList.jsx",
+    "src/widgets/SlideImage.jsx",
+    "src/widgets/Slide.jsx",
+    "src/widgets/NewFilmsSlider.jsx",
+    "src/widgets/Dots.jsx",
+    "src/widgets/Dot.jsx"
+  ],
   "exclude": ["node_modules"]
 }

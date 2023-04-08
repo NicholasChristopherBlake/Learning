@@ -1,22 +1,15 @@
-import React from "react";
-import testPoster from "@/shared/assets/test-poster.jpeg";
-import Image from "next/image";
-
-const NewFilmsSlider = () => {
-  return (
-    <section>
-      <h2>Your weekend buddy for this week</h2>
-      <SlidesList />
-      <Arrows />
-      <Dots />
-    </section>
-  );
-};
+import { useContext } from "react";
+import { SliderContext } from "./NewFilmsSlider";
 
 const Arrows = () => {
+  const { changeSlide } = useContext(SliderContext);
+
   return (
-    <div>
-      <div>
+    <div className="arrows flex text-[30px] justify-between h-[10%] absolute top-[30%] w-[90%] z-1">
+      <div
+        className="arrow arrow-left h-[30px] w-[30px] hover:cursor-pointer ml-1"
+        onClick={() => changeSlide(-1)}
+      >
         <svg
           fill="#a6b9d1"
           width="93px"
@@ -37,7 +30,10 @@ const Arrows = () => {
           </g>
         </svg>
       </div>
-      <div>
+      <div
+        className="h-[30px] w-[30px] hover:cursor-pointer mr-1"
+        onClick={() => changeSlide(1)}
+      >
         <svg
           fill="#a6b9d1"
           width="93px"
@@ -63,56 +59,4 @@ const Arrows = () => {
   );
 };
 
-const Dot = () => {
-  return <div className="inline-block">o</div>;
-};
-
-const Dots = () => {
-  const renderDots = () => {
-    const dots = [];
-    for (let i = 0; i < 7; i++) {
-      dots.push(<Dot key={i} />);
-    }
-    return dots;
-  };
-  return <div className="dots">{renderDots()}</div>;
-};
-
-const SlideImage = () => {
-  return (
-    <Image
-      width={200}
-      height={300}
-      src={testPoster}
-      alt=""
-      className="slide-image"
-    />
-  );
-};
-
-const SlideTitle = () => {
-  return <div>Slide Title</div>;
-};
-
-const Slide = () => {
-  return (
-    <div className="slide">
-      <SlideImage />
-      <SlideTitle />
-    </div>
-  );
-};
-
-const SlidesList = () => {
-  return (
-    <div className="slide-list">
-      <Slide />
-      <Slide />
-      <Slide />
-      <Slide />
-      <Slide />
-    </div>
-  );
-};
-
-export default NewFilmsSlider;
+export default Arrows;
