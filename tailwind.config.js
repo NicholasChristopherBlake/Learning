@@ -10,6 +10,9 @@ module.exports = {
         accent2: "rgb(210, 77, 92)",
         primaryWhite: "rgb(245,245,245)",
       },
+      aspectRatio: {
+        "2/3": "2 / 3",
+      },
     },
   },
   plugins: [],

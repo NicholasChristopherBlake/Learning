@@ -6,7 +6,7 @@ import { createContext } from "react";
 import { getNewFilms } from "./getNewFilms";
 import { getNewFilmInfo } from "./getNewFilmInfo";
 
-export const SliderContext = createContext(null);
+export const SliderContext = createContext();
 
 const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
   const [items, setItems] = useState([]);
@@ -87,7 +87,7 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
 
   return (
     <section>
-      <h2>Your weekend buddy for this week</h2>
+      <h2 className=" text-center">Your weekend buddy for this week</h2>
       <div
         className="overflow-hidden relative"
         style={{ width, height }}

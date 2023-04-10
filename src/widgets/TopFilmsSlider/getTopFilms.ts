@@ -1,12 +1,13 @@
 import axios from "axios";
 
-export const getNewFilms = async () => {
+export const getTopFilms = async () => {
   const options = {
     method: "GET",
     url: "https://moviesdatabase.p.rapidapi.com/titles",
     params: {
       titleType: "movie",
-      list: "top_boxoffice_last_weekend_10",
+      list: "top_rated_250",
+      limit: "20",
       info: "base_info",
     },
     headers: {
@@ -22,6 +23,4 @@ export const getNewFilms = async () => {
   console.log("Response Filtered is", responseFiltered);
 
   return responseFiltered;
-  // setData(response.data.results);
-  // console.log(data);
 };

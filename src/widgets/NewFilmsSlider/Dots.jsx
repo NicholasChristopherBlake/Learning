@@ -12,7 +12,11 @@ const Dots = () => {
     }
     return dots;
   };
-  return <div className="dots flex justify-center gap-2">{renderDots()}</div>;
+  return (
+    <div className="dots flex justify-center gap-2 bg-primaryBlue">
+      {renderDots()}
+    </div>
+  );
 };
 
 export default Dots;

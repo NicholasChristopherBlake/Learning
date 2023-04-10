@@ -5,7 +5,8 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Button from "@/shared/ui/Button/Button";
 import Header from "@/widgets/Header";
-import NewFilmsSlider from "@/widgets/NewFilmsSlider.jsx";
+import NewFilmsSlider from "@/widgets/NewFilmsSlider/NewFilmsSlider.jsx";
+import TopFilmsSlider from "@/widgets/TopFilmsSlider/TopFilmsSlider.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function Home() {
       <main className={styles.background}>
         <Header></Header>
         <NewFilmsSlider></NewFilmsSlider>
-        <Button>Click Here</Button>
+        <TopFilmsSlider></TopFilmsSlider>
       </main>
     </>
   );

@@ -1,15 +1,7 @@
-import { useContext } from "react";
-import { SliderContext } from "./NewFilmsSlider";
-
 const Arrows = () => {
-  const { changeSlide } = useContext(SliderContext);
-
   return (
-    <div className="arrows flex text-[30px] justify-between h-[10%] absolute top-[30%] w-[90%] z-1">
-      <div
-        className="arrow arrow-left h-[30px] w-[30px] hover:cursor-pointer ml-1"
-        onClick={() => changeSlide(-1)}
-      >
+    <div className="arrows flex text-[30px] justify-between h-[10%] absolute top-[30%] w-[96%] z-1">
+      <div className="arrow arrow-left h-[30px] w-[30px] hover:cursor-pointer ml-1">
         <svg
           fill="#a6b9d1"
           width="93px"
@@ -30,10 +22,7 @@ const Arrows = () => {
           </g>
         </svg>
       </div>
-      <div
-        className="h-[30px] w-[30px] hover:cursor-pointer mr-1"
-        onClick={() => changeSlide(1)}
-      >
+      <div className="h-[30px] w-[30px] hover:cursor-pointer mr-1">
         <svg
           fill="#a6b9d1"
           width="93px"
