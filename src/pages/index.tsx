@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Button from "@/shared/ui/Button/Button";
 import Header from "@/widgets/Header";
+import Footer from "@/widgets/Footer";
 import NewFilmsSlider from "@/widgets/NewFilmsSlider/NewFilmsSlider.jsx";
 import TopFilmsSlider from "@/widgets/TopFilmsSlider/TopFilmsSlider.jsx";
 import TopSeriesSlider from "@/widgets/TopSeriesSlider/TopSeriesSlider.jsx";
@@ -25,6 +26,7 @@ export default function Home() {
         <NewFilmsSlider></NewFilmsSlider>
         <TopFilmsSlider></TopFilmsSlider>
         <TopSeriesSlider></TopSeriesSlider>
+        <Footer></Footer>
       </main>
     </>
   );

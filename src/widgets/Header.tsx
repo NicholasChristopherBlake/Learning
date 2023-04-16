@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "@/shared/assets/logo.png";
 import Image from "next/image";
+import SearchModal from "@/features/SearchModal";
 
 const Header = () => {
+  const [showSearchModal, setShowSearchModal] = useState(false);
+
   return (
-    <header className="outline">
+    <header className="outline relative">
       <div className="mx-auto container flex justify-between">
         <Image
           src={logo}
@@ -21,7 +24,13 @@ const Header = () => {
             <li>Actors</li>
           </ul>
         </nav>
-        <button>
+        <button
+          onClick={() => {
+            showSearchModal
+              ? setShowSearchModal(false)
+              : setShowSearchModal(true);
+          }}
+        >
           <svg
             fill="#b4b9c0"
             width="30px"
@@ -44,6 +53,10 @@ const Header = () => {
             </g>
           </svg>
         </button>
+        <SearchModal
+          showSearchModal={showSearchModal}
+          setShowSearchModal={setShowSearchModal}
+        />
         <button className="text-primaryWhite">Login</button>
       </div>
     </header>
