@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { TopFilmsContext } from "./TopFilmsSlider";
+import { TopSeriesContext } from "./TopSeriesSlider";
 
 const Arrows = () => {
-  const { changeSlide } = useContext(TopFilmsContext);
+  const { changeSlide } = useContext(TopSeriesContext);
 
   return (
     <div className="arrows flex text-[30px] justify-between h-[10%] absolute top-[30%] w-[96%] z-1">

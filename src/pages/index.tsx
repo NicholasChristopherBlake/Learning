@@ -7,6 +7,7 @@ import Button from "@/shared/ui/Button/Button";
 import Header from "@/widgets/Header";
 import NewFilmsSlider from "@/widgets/NewFilmsSlider/NewFilmsSlider.jsx";
 import TopFilmsSlider from "@/widgets/TopFilmsSlider/TopFilmsSlider.jsx";
+import TopSeriesSlider from "@/widgets/TopSeriesSlider/TopSeriesSlider.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function Home() {
         <Header></Header>
         <NewFilmsSlider></NewFilmsSlider>
         <TopFilmsSlider></TopFilmsSlider>
+        <TopSeriesSlider></TopSeriesSlider>
       </main>
     </>
   );

@@ -1,17 +1,17 @@
 import React, { createContext, useEffect, useState } from "react";
-import { getTopFilms } from "./getTopFilms";
+import { getTopSeries } from "./getTopSeries";
 import SlidesList from "./SlidesList";
 import Arrows from "./Arrows";
 
-export const TopFilmsContext = createContext();
+export const TopSeriesContext = createContext();
 
-const TopFilmsSlider = () => {
+const TopSeriesSlider = () => {
   const [items, setItems] = useState([]);
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
     const getData = async () => {
-      const response = await getTopFilms();
+      const response = await getTopSeries();
       setItems(response);
     };
     getData();
@@ -28,12 +28,12 @@ const TopFilmsSlider = () => {
     setSlide(slideNumber);
   };
 
-  console.log("top films Items:", items);
+  console.log("top series Items:", items);
 
   return (
     <section>
       <div className="flex justify-between px-16">
-        <h2>Top Movies</h2>
+        <h2>Top Series</h2>
         <ul className="flex gap-8">
           <li>Random</li>
           <li>Popular</li>
@@ -41,15 +41,15 @@ const TopFilmsSlider = () => {
         </ul>
       </div>
       <div className=" bg-primaryBlue overflow-hidden relative w-[100%]">
-        <TopFilmsContext.Provider
+        <TopSeriesContext.Provider
           value={{ items, slideNumber: slide, changeSlide }}
         >
           <SlidesList />
           <Arrows />
-        </TopFilmsContext.Provider>
+        </TopSeriesContext.Provider>
       </div>
     </section>
   );
 };
 
-export default TopFilmsSlider;
+export default TopSeriesSlider;

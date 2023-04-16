@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { TopFilmsContext } from "./TopFilmsSlider";
+import { TopSeriesContext } from "./TopSeriesSlider";
 import Slide from "./Slide";
 
 const SlidesList = () => {
-  const { slideNumber, items } = useContext(TopFilmsContext);
+  const { slideNumber, items } = useContext(TopSeriesContext);
   return (
     <div
       className="flex gap-4"
