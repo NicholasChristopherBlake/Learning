@@ -1,12 +1,12 @@
 import React from "react";
 
 const SlideInfo = ({ info }) => {
-  {
-    console.log("BasicSlideinfo", info[4]);
-    if (info[4] !== undefined) {
-      console.log(info[4][info[4].length - 1]);
-    }
-  }
+  // {
+  //   console.log("BasicSlideinfo", info[4]);
+  //   if (info[4] !== undefined) {
+  //     console.log(info[4][info[4].length - 1]);
+  //   }
+  // }
   return (
     <div className="bg-white text-black">
       {info[4] !== undefined ? (

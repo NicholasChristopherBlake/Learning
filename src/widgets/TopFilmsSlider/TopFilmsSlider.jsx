@@ -28,7 +28,7 @@ const TopFilmsSlider = () => {
     setSlide(slideNumber);
   };
 
-  console.log("top films Items:", items);
+  // console.log("top films Items:", items);
 
   return (
     <section>

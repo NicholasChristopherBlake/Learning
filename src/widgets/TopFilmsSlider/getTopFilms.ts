@@ -16,11 +16,11 @@ export const getTopFilms = async () => {
     },
   };
   const response = await axios.request(options);
-  console.log("Response is", response);
+  // console.log("Response is", response);
   const responseFiltered = response.data.results.filter(
     (item: any) => item.primaryImage !== null
   );
-  console.log("Response Filtered is", responseFiltered);
+  // console.log("Response Filtered is", responseFiltered);
 
   return responseFiltered;
 };

@@ -55,13 +55,13 @@ export const getNewFilmInfo = async (id: string) => {
   const responseRatings = await axios.request(optionsRatings);
   const responseCrew = await axios.request(optionsCrew);
   const responseActors = await axios.request(optionsActors);
-  console.log("Response is", {
-    responseBasic,
-    responseAka,
-    responseRatings,
-    responseCrew,
-    responseActors,
-  });
+  // console.log("Response is", {
+  //   responseBasic,
+  //   responseAka,
+  //   responseRatings,
+  //   responseCrew,
+  //   responseActors,
+  // });
 
   return [
     responseBasic.data.results,

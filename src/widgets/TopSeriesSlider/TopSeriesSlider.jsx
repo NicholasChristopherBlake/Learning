@@ -28,7 +28,7 @@ const TopSeriesSlider = () => {
     setSlide(slideNumber);
   };
 
-  console.log("top series Items:", items);
+  // console.log("top series Items:", items);
 
   return (
     <section>

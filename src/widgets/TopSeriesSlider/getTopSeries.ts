@@ -15,11 +15,11 @@ export const getTopSeries = async () => {
     },
   };
   const response = await axios.request(options);
-  console.log("Response Series is", response.data.results);
+  // console.log("Response Series is", response.data.results);
   const responseFiltered = response.data.results.filter(
     (item: any) => item.primaryImage !== null
   );
-  console.log("Response Series Filtered is", responseFiltered);
+  // console.log("Response Series Filtered is", responseFiltered);
 
   return responseFiltered;
 };

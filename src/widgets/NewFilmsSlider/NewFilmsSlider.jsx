@@ -5,12 +5,13 @@ import Dots from "./Dots";
 import { createContext } from "react";
 import { getNewFilms } from "./getNewFilms";
 import { getNewFilmInfo } from "./getNewFilmInfo";
+// import NewFilmsContainer from "./newFilmsContainer";
 
 export const SliderContext = createContext();
 
 const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
   const [items, setItems] = useState([]);
-  const [slide, setSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState();
   const [info, setInfo] = useState([]);
   const [touchPosition, setTouchPosition] = useState(null);
 
@@ -18,43 +19,32 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
     const getData = async () => {
       const response = await getNewFilms();
       setItems(response);
+      setCurrentSlide(Math.ceil(response.length / 2) - 1);
     };
     getData();
-    const getInfo = async () => {
-      console.log("id:", items[0]?.id);
-      const response = await getNewFilmInfo(items[0]?.id);
-      setInfo(response);
-    };
-    getInfo();
   }, []);
-
-  console.log("Items:", items);
-  console.log("Items id:", items[slide]?.id);
-  console.log("slide:", slide);
 
   useEffect(() => {
     const getInfo = async () => {
-      console.log("id:", items[slide]?.id);
-      const response = await getNewFilmInfo(items[slide]?.id);
+      const response = await getNewFilmInfo(items[currentSlide]?.id);
       setInfo(response);
     };
     getInfo();
-  }, [slide]);
+  }, [currentSlide]);
 
   const changeSlide = (direction = 1) => {
     let slideNumber = 0;
 
-    if (slide + direction < 0) {
+    if (currentSlide + direction < 0) {
       slideNumber = items.length - 1;
     } else {
-      slideNumber = (slide + direction) % items.length;
+      slideNumber = (currentSlide + direction) % items.length;
     }
-    setSlide(slideNumber);
+    setCurrentSlide(slideNumber);
   };
 
   const goToSlide = (number) => {
-    console.log("something happened");
-    setSlide(number % items.length);
+    setCurrentSlide(number % items.length);
   };
 
   const handleTouchStart = (e) => {
@@ -83,7 +73,7 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
     return () => {
       clearInterval(interval);
     };
-  }, [items.length, slide]);
+  }, [items.length, currentSlide]);
 
   return (
     <section>
@@ -99,7 +89,7 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
             goToSlide,
             changeSlide,
             slidesCount: items.length,
-            slideNumber: slide,
+            slideNumber: currentSlide,
             items,
             info,
           }}
