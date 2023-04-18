@@ -30,7 +30,11 @@
     "src/widgets/NewFilmsSlider.jsx",
     "src/widgets/Dots.jsx",
     "src/widgets/Dot.jsx",
-    "src/shared/ui/Search/Search.jsx"
+    "src/shared/ui/Search/Search.jsx",
+    "src/store/index.js",
+    "src/widgets/NewFilmsSlider/reducers/NewFilmsSlice.js",
+    "src/widgets/NewFilmsSlider/getNewFilms.js",
+    "src/widgets/NewFilmsSlider/getNewFilmInfo.js"
   ],
   "exclude": ["node_modules"]
 }

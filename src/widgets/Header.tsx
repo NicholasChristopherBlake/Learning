@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "@/shared/assets/logo.png";
 import Image from "next/image";
 import SearchModal from "@/features/SearchModal";
+import Link from "next/link";
 
 const Header = () => {
   const [showSearchModal, setShowSearchModal] = useState(false);
@@ -9,19 +10,21 @@ const Header = () => {
   return (
     <header className="outline relative">
       <div className="mx-auto container flex justify-between">
-        <Image
-          src={logo}
-          alt="logo"
-          width={200}
-          height={100}
-          className="w-auto h-auto"
-        />
+        <Link href="/">
+          <Image
+            src={logo}
+            alt="logo"
+            width={200}
+            height={100}
+            className="w-auto h-auto"
+          />
+        </Link>
         <nav className="text-primaryWhite flex">
           <ul className="flex justify-between gap-32 items-center">
-            <li>Movies</li>
-            <li>Series</li>
-            <li>Collections</li>
-            <li>Actors</li>
+            <Link href="/movies">Movies</Link>
+            <Link href="/series">Series</Link>
+            <Link href="/collections">Collections</Link>
+            <Link href="/actors">Actors</Link>
           </ul>
         </nav>
         <button

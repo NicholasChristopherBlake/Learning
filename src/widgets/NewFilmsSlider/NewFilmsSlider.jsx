@@ -3,48 +3,59 @@ import SlidesList from "./SlidesList";
 import Arrows from "./Arrows";
 import Dots from "./Dots";
 import { createContext } from "react";
-import { getNewFilms } from "./getNewFilms";
-import { getNewFilmInfo } from "./getNewFilmInfo";
-// import NewFilmsContainer from "./newFilmsContainer";
+import { getNewFilms, getNewFilmsRedux } from "./getNewFilms";
+import { getNewFilmInfo, getNewFilmInfoRedux } from "./getNewFilmInfo";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from "@/shared/ui/Loader/Loader";
 
 export const SliderContext = createContext();
 
 const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
   const [currentSlide, setCurrentSlide] = useState();
-  const [info, setInfo] = useState([]);
+  // const [info, setInfo] = useState([]);
   const [touchPosition, setTouchPosition] = useState(null);
 
-  useEffect(() => {
-    const getData = async () => {
-      const response = await getNewFilms();
-      setItems(response);
-      setCurrentSlide(Math.ceil(response.length / 2) - 1);
-    };
-    getData();
-  }, []);
+  const dispatch = useDispatch();
+  const { isLoading, error, films } = useSelector((state) => state.newFilms);
+  const { info } = useSelector((state) => state.newFilmInfo);
+  // const isLoading = useSelector((state) => state.newFilms.isLoading);
+  // const error = useSelector((state) => state.newFilms.error);
+  // const films = useSelector((state) => state.newFilms.films);
 
   useEffect(() => {
-    const getInfo = async () => {
-      const response = await getNewFilmInfo(items[currentSlide]?.id);
-      setInfo(response);
-    };
-    getInfo();
+    dispatch(getNewFilmsRedux());
+  }, []);
+  useEffect(() => {
+    setCurrentSlide(Math.ceil(films.length / 2) - 1);
+  }, [films]);
+
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const response = await getNewFilms();
+  //     setItems(response);
+  //     setCurrentSlide(Math.ceil(response.length / 2) - 1);
+  //   };
+  //   getData();
+  // }, []);
+
+  useEffect(() => {
+    dispatch(getNewFilmInfoRedux(films[currentSlide]?.id));
   }, [currentSlide]);
 
   const changeSlide = (direction = 1) => {
     let slideNumber = 0;
 
     if (currentSlide + direction < 0) {
-      slideNumber = items.length - 1;
+      slideNumber = films.length - 1;
     } else {
-      slideNumber = (currentSlide + direction) % items.length;
+      slideNumber = (currentSlide + direction) % films.length;
     }
     setCurrentSlide(slideNumber);
   };
 
   const goToSlide = (number) => {
-    setCurrentSlide(number % items.length);
+    setCurrentSlide(number % films.length);
   };
 
   const handleTouchStart = (e) => {
@@ -73,7 +84,7 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
     return () => {
       clearInterval(interval);
     };
-  }, [items.length, currentSlide]);
+  }, [films.length, currentSlide]);
 
   return (
     <section>
@@ -88,15 +99,21 @@ const NewFilmsSlider = ({ width, height, autoPlay, autoPlayTime }) => {
           value={{
             goToSlide,
             changeSlide,
-            slidesCount: items.length,
+            slidesCount: films.length,
             slideNumber: currentSlide,
-            items,
+            items: films,
             info,
           }}
         >
-          <SlidesList />
-          <Arrows />
-          <Dots />
+          {isLoading && <Loader />}
+          {error && <h2>{error}</h2>}
+          {films && (
+            <>
+              <SlidesList />
+              <Arrows />
+              <Dots />
+            </>
+          )}
         </SliderContext.Provider>
       </div>
     </section>
