@@ -24,7 +24,7 @@ Front-end приложение для поиска и просмотра фил�
 - Sass, CSS modules
 - Jest
 - NextJS
-- PWA (?)
+- PWA (?)(!!)
 - React-hook-form, Yup
 - Testing Library
 - Storybook
