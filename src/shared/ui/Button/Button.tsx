@@ -6,6 +6,6 @@ const Button: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {children}
     </button>
   );
-}
+};
 
 export default Button;
