@@ -11,7 +11,7 @@ module.exports = {
         primaryWhite: "rgb(245,245,245)",
       },
       aspectRatio: {
-        "2/3": "2 / 3",
+        "2/3": "2 / 3"
       },
     },
   },
