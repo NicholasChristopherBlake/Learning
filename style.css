@@ -22,8 +22,28 @@ h1 {
   font-size: 2.5rem;
   line-height: 1.2;
 }
-#hero p {
+p {
   color: var(--textlight1);
+}
+h2 {
+  color: var(--textdark1);
+}
+header a {
+  color: white;
+}
+#statistics p {
+  line-height: 170%;
+}
+#statistics .card p {
+  line-height: normal;
+  font-size: 16px;
+}
+h4 {
+  font-size: 1.5rem;
+  color: var(--textdark1);
+}
+.boost-container h2 {
+  color: white;
 }
 a {
   text-decoration: none;
@@ -36,15 +56,25 @@ footer p {
   color: white;
   font-weight: var(--bold);
 }
-
+footer a {
+  font-weight: var(--medium);
+  font-size: 0.9rem;
+}
 ul {
   list-style: none;
 }
 
 /* Background */
-#statistics,
-#form {
+#statistics {
   background-color: rgb(230, 230, 230);
+}
+#form {
+  background: linear-gradient(
+    white 0%,
+    white 50%,
+    rgb(230, 230, 230) 50%,
+    rgb(230, 230, 230) 100%
+  );
 }
 form {
   background-color: var(--bg);
@@ -63,16 +93,21 @@ footer {
 }
 /* Active states */
 button:hover {
-  background-color: hsl(180, 68%, 79%);
   cursor: pointer;
+}
+
+.get-started:hover,
+.sign-up:hover {
+  background-color: hsl(180, 68%, 79%);
 }
 .navbar a:hover {
   color: var(--textdark1);
 }
+
 footer a:hover {
   color: var(--accent);
 }
-footer a:hover svg path {
+.socials a:hover svg path {
   fill: var(--accent);
 }
 
@@ -82,7 +117,8 @@ button {
   color: white;
   font-weight: var(--bold);
 }
-.get-started {
+.get-started,
+.sign-up {
   background-color: var(--accent);
   padding: 0.7em 2.4em;
   border-radius: 5rem;
@@ -90,7 +126,7 @@ button {
 
 .container {
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem 1.5rem;
   max-width: 1000px;
   outline: 1px black solid;
 }
@@ -115,6 +151,83 @@ button {
 }
 
 /* Mobile */
+
+/* Navigation Mobile */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: white;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  position: relative;
+}
+#menu {
+  margin: 0;
+  padding-left: 0;
+}
+.primary-navigation {
+  z-index: 3;
+  position: absolute;
+  top: calc(89px - 1rem);
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.sign-up {
+  width: 100%;
+}
+.primary-navigation hr {
+  height: 1px;
+  border: none;
+  background-color: hsla(257, 7%, 63%, 0.5);
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+main {
+  margin-top: 89px;
+}
+/* Animation */
+@keyframes clipPathCircleOpen {
+  0% {
+    clip-path: circle(0% at top right);
+  }
+  100% {
+    clip-path: circle(250% at top right);
+  }
+}
+@keyframes clipPathCircleClose {
+  0% {
+    clip-path: circle(250% at top right);
+  }
+  100% {
+    clip-path: circle(0% at top right);
+  }
+}
+.primary-navigation[data-state="opened"] {
+  animation: clipPathCircleOpen 250ms ease-in-out forwards;
+  display: block;
+}
+.primary-navigation[data-state="closing"] {
+  animation: clipPathCircleClose 250ms ease-in-out forwards;
+}
+.primary-navigation[data-state="closed"] {
+  display: none;
+}
+
 /* Hero */
 #hero {
   overflow: hidden;
@@ -171,4 +284,89 @@ form button {
   min-height: 50px;
   border-radius: 0.4rem;
   border: 0;
+}
+
+/* Statistics */
+#statistics h2,
+#statistics p {
+  text-align: center;
+  margin-top: 1rem;
+}
+.statistics-text {
+  margin-bottom: 4rem;
+}
+.img-circle {
+  max-width: fit-content;
+  background-color: var(--bg);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.analytics-img {
+  padding: 1.5rem;
+}
+.grid {
+  display: grid;
+  gap: 6rem;
+}
+.card {
+  background-color: white;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem 2rem 1.5rem;
+}
+.card h4 {
+  margin-top: -1rem;
+}
+.card-container {
+  position: relative;
+}
+.card-container::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 6rem;
+  background-color: var(--accent);
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 4px);
+}
+
+/* Boost */
+.boost-container {
+  padding: 4rem 0;
+  text-align: center;
+}
+.boost-container h2 {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer svg path {
+  fill: white;
+}
+.logo-footer {
+  margin-bottom: 1rem;
+}
+footer {
+  padding: 1rem;
+}
+.grid-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+ul {
+  padding-left: 0px;
+}
+footer p {
+  margin-bottom: 1rem;
+}
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 0;
 }
