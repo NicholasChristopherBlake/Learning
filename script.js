@@ -38,54 +38,69 @@ const check = () => {
   return valid;
 };
 
-// // API
-// async function fetchAPI(longURL) {
-//   try {
-//     let url = encodeURIComponent(longURL);
-//     const response = await fetch("https://cleanuri.com/api/v1/shorten", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/x-www-form-urlencoded",
-//         // "Access-Control-Allow-Origin": "*",
-//         // "Access-Control-Allow-Credentials": true,
-//       },
-//       body: JSON.stringify(url),
-//     });
-//     const result = await response.json();
-//     console.log("Success:", result);
-//   } catch (error) {
-//     console.error("Error", error);
-//   }
+// API
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const results = document.getElementById("results");
 
-//   // let longURL =
-//   // "https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data";
-// }
-// fetchAPI("https://google.com/sdf?%sd sdkfj 20");
-
-async function fetchAPI() {
-  const url = "https://free-url-shortener.p.rapidapi.com/api/write/post";
+async function fetchAPI(enteredURL) {
+  const url = "https://url-shortener-service.p.rapidapi.com/shorten";
   const options = {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
       "X-RapidAPI-Key": "73829d015emshf882f87181a04aep163cf3jsnf8ecfbdeaa8f",
-      "X-RapidAPI-Host": "free-url-shortener.p.rapidapi.com",
+      "X-RapidAPI-Host": "url-shortener-service.p.rapidapi.com",
     },
     body: new URLSearchParams({
-      type: "json",
-      url: "https://url.com",
+      url: enteredURL,
     }),
   };
 
   try {
     const response = await fetch(url, options);
-    const result = await response.text();
-    console.log(result);
+    const result = await response.json();
+    console.log(result.result_url);
+
+    if (result.result_url != undefined) {
+      const newResultCard = document.createElement("div");
+      newResultCard.classList.add("results-card");
+      newResultCard.setAttribute("data-state", "fetched");
+      const userURL = document.createElement("p");
+      userURL.classList.add("user-url");
+      userURL.innerHTML = enteredURL;
+      const hr = document.createElement("hr");
+      const shortURL = document.createElement("a");
+      shortURL.classList.add("short-url");
+      shortURL.setAttribute("href", result.result_url);
+      shortURL.innerHTML = result.result_url;
+      const copyButton = document.createElement("button");
+      copyButton.classList.add("copy-button");
+      copyButton.setAttribute("data-state", "unpressed");
+      copyButton.setAttribute("onclick", "copy(this)");
+      copyButton.innerHTML = "Copy";
+      newResultCard.appendChild(userURL);
+      newResultCard.appendChild(hr);
+      newResultCard.appendChild(shortURL);
+      newResultCard.appendChild(copyButton);
+      results.appendChild(newResultCard);
+    }
   } catch (error) {
     console.error(error);
   }
 }
 
-// fetch("https://jsonplaceholder.typicode.com/todos/1")
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(input.value);
+  // console.log(encodeURIComponent(input.value));
+  // const validURL = encodeURIComponent(input.value);
+  fetchAPI(input.value);
+});
+
+// Copy Button
+
+function copy(a) {
+  a.setAttribute("data-state", "pressed");
+  a.innerText = "Copied!";
+}

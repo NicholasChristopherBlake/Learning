@@ -76,14 +76,9 @@
         </div>
       </section>
 
-      <section id="form">
+      <section id="form-section">
         <div class="container">
-          <form
-            onsubmit="return check()"
-            action="https://cleanuri.com/api/v1/shorten"
-            method="post"
-            novalidate
-          >
+          <form id="form" onsubmit="return check()" method="post" novalidate>
             <input
               id="input"
               name="url"
@@ -92,9 +87,33 @@
               placeholder="Shorten a link here..."
             />
             <div id="error-message"></div>
-            <button type="submit">Shorten It!</button>
-            <button onclick="fetchAPI()">Fetch API</button>
+            <button class="shorten-button" type="submit">Shorten It!</button>
           </form>
+        </div>
+      </section>
+
+      <section id="results-section">
+        <div class="container">
+          <div id="results">
+            <div class="results-card" data-state="fetched">
+              <p class="user-url"></p>
+              <hr />
+              <a href="" class="short-url"></a>
+              <button
+                onclick="copy(this)"
+                data-state="unpressed"
+                class="copy-button"
+              >
+                Copy
+              </button>
+            </div>
+            <div class="results-card">
+              <p class="user-url">Frontendmentor.com</p>
+              <hr />
+              <a href="" class="short-url">https:///gdfgdfg.com</a>
+              <button data-state="unpressed" class="copy-button">Copy</button>
+            </div>
+          </div>
         </div>
       </section>
 
