@@ -23,10 +23,10 @@ function closeMenu() {
 }
 
 // Validation
+const field = document.getElementById("input");
+const error = document.getElementById("error-message");
 const check = () => {
   let valid = true;
-  let field = document.getElementById("input");
-  let error = document.getElementById("error-message");
   if (!field.checkValidity()) {
     valid = false;
     field.classList.add("err");
@@ -58,49 +58,46 @@ async function fetchAPI(enteredURL) {
   };
 
   try {
+    // field.classList.remove("err");
+    // error.innerHTML = "";
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result.result_url);
 
     if (result.result_url != undefined) {
       const newResultCard = document.createElement("div");
+      const newId = Date.now().toString(4);
       newResultCard.classList.add("results-card");
       newResultCard.setAttribute("data-state", "fetched");
-      const userURL = document.createElement("p");
-      userURL.classList.add("user-url");
-      userURL.innerHTML = enteredURL;
-      const hr = document.createElement("hr");
-      const shortURL = document.createElement("a");
-      shortURL.classList.add("short-url");
-      shortURL.setAttribute("href", result.result_url);
-      shortURL.innerHTML = result.result_url;
-      const copyButton = document.createElement("button");
-      copyButton.classList.add("copy-button");
-      copyButton.setAttribute("data-state", "unpressed");
-      copyButton.setAttribute("onclick", "copy(this)");
-      copyButton.innerHTML = "Copy";
-      newResultCard.appendChild(userURL);
-      newResultCard.appendChild(hr);
-      newResultCard.appendChild(shortURL);
-      newResultCard.appendChild(copyButton);
+      newResultCard.innerHTML = `<p class="user-url">${enteredURL}</p>
+      <hr />
+      <a class="short-url" data-id=${newId} href="${result.result_url}">${result.result_url}</a>
+      <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>`;
       results.appendChild(newResultCard);
     }
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.log("here!!!!");
+    console.error(err);
+    // field.classList.add("err");
+    // error.innerHTML = "Please enter a correct link";
   }
 }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(input.value);
-  // console.log(encodeURIComponent(input.value));
-  // const validURL = encodeURIComponent(input.value);
   fetchAPI(input.value);
 });
 
 // Copy Button
 
 function copy(a) {
+  const pressedButton = document.querySelector(`button[data-state="pressed"]`);
+  if (pressedButton !== null) {
+    pressedButton.setAttribute("data-state", "unpressed");
+    pressedButton.innerText = "Copy";
+  }
   a.setAttribute("data-state", "pressed");
   a.innerText = "Copied!";
+  const id = a.getAttribute("data-id");
+  const copiedLink = document.querySelector(`a[data-id="${id}"]`);
+  navigator.clipboard.writeText(copiedLink.innerText);
 }
