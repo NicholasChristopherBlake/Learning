@@ -77,7 +77,8 @@ async function fetchAPI(enteredURL) {
         const newId = Date.now().toString(4);
         newResultCard.classList.add("results-card");
         newResultCard.setAttribute("data-state", "fetched");
-        newResultCard.innerHTML = `<p class="user-url" data-id="${enteredURL}">${enteredURL}</p>
+        newResultCard.innerHTML = `
+      <p class="user-url" data-id="${enteredURL}">${enteredURL}</p>
       <hr />
       <div class="results-right-side"> 
       <a class="short-url" data-id=${newId} href="${result.result_url}">${result.result_url}</a>
@@ -105,12 +106,14 @@ const getItems = () => {
       const newId = Date.now().toString(4);
       newResultCard.classList.add("results-card");
       newResultCard.setAttribute("data-state", "fetched");
-      newResultCard.innerHTML = `<p class="user-url" data-id="${key}">${key}</p>
+      newResultCard.innerHTML = `
+      <p class="user-url" data-id="${key}">${key}</p>
       <hr />
       <div class="results-right-side">
       <a class="short-url" data-id=${newId} href="${value}">${value}</a>
       <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>
-      </div>`;
+      </div>
+      `;
       results.appendChild(newResultCard);
     }
   }
