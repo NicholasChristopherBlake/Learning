@@ -104,8 +104,10 @@ const getItems = () => {
       newResultCard.setAttribute("data-state", "fetched");
       newResultCard.innerHTML = `<p class="user-url" data-id="${key}">${key}</p>
       <hr />
+      <div class="results-right-side">
       <a class="short-url" data-id=${newId} href="${value}">${value}</a>
-      <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>`;
+      <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>
+      </div>`;
       results.appendChild(newResultCard);
     }
   }
