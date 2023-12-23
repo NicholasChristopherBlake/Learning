@@ -79,8 +79,11 @@ async function fetchAPI(enteredURL) {
         newResultCard.setAttribute("data-state", "fetched");
         newResultCard.innerHTML = `<p class="user-url" data-id="${enteredURL}">${enteredURL}</p>
       <hr />
+      <div class="results-right-side"> 
       <a class="short-url" data-id=${newId} href="${result.result_url}">${result.result_url}</a>
-      <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>`;
+      <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>
+      </div>
+      `;
         results.appendChild(newResultCard);
         // Save to Local Storage
         localStorage.setItem(enteredURL, result.result_url);

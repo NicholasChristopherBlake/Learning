@@ -22,17 +22,17 @@ Users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
 
-### Screenshot
-
-![](./screenshot1.jpeg)
-![](./screenshot2.jpeg)
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://nicholaschristopherblake.github.io/9.-URL-Shortening-API-Intermediate/](https://nicholaschristopherblake.github.io/9.-URL-Shortening-API-Intermediate/)
 
 ## Author
 
 - Website - [Nicholas C. Blake](https://github.com/NicholasChristopherBlake)
 - Frontend Mentor - [@NicholasChristopherBlake](https://www.frontendmentor.io/profile/NicholasChristopherBlake)
+
+### Screenshot
+
+![](./screenshot1.jpeg)
+![](./screenshot2.jpeg)
