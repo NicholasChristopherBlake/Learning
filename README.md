@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/url-shortening-api-page-with-only-js-TqPQd9-xoH](https://www.frontendmentor.io/solutions/url-shortening-api-page-with-only-js-TqPQd9-xoH)
 - Live Site URL: [https://nicholaschristopherblake.github.io/9.-URL-Shortening-API-Intermediate/](https://nicholaschristopherblake.github.io/9.-URL-Shortening-API-Intermediate/)
 
 ## Author
