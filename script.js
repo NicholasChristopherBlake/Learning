@@ -1,4 +1,4 @@
-// Menu toggle
+// Mobile menu toggle
 const menuToggle = document.getElementById("menu");
 const siteNavigation = document.getElementById("nav");
 
@@ -22,7 +22,7 @@ function closeMenu() {
   );
 }
 
-// Validation
+// Validation for empty field
 const field = document.getElementById("input");
 const error = document.getElementById("error-message");
 const check = () => {
@@ -57,30 +57,61 @@ async function fetchAPI(enteredURL) {
     }),
   };
 
-  try {
-    // field.classList.remove("err");
-    // error.innerHTML = "";
-    const response = await fetch(url, options);
-    const result = await response.json();
+  if (enteredURL == "") return;
 
-    if (result.result_url != undefined) {
+  if (document.querySelector(`p.user-url[data-id="${enteredURL}"]`)) {
+    input.value = "";
+  } else {
+    try {
+      field.classList.remove("err");
+      error.innerHTML = "";
+      const response = await fetch(url, options);
+      if (response.status == 400) {
+        throw new Error("Error 400 Bad Request");
+      }
+      const result = await response.json();
+
+      // Create result card
+      if (result.result_url != undefined) {
+        const newResultCard = document.createElement("div");
+        const newId = Date.now().toString(4);
+        newResultCard.classList.add("results-card");
+        newResultCard.setAttribute("data-state", "fetched");
+        newResultCard.innerHTML = `<p class="user-url" data-id="${enteredURL}">${enteredURL}</p>
+      <hr />
+      <a class="short-url" data-id=${newId} href="${result.result_url}">${result.result_url}</a>
+      <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>`;
+        results.appendChild(newResultCard);
+        // Save to Local Storage
+        localStorage.setItem(enteredURL, result.result_url);
+        input.value = "";
+        return result;
+      }
+    } catch (err) {
+      field.classList.add("err");
+      error.innerHTML = "Please enter a correct link";
+    }
+  }
+}
+
+// Get Items from local storage
+const getItems = () => {
+  if (localStorage.length !== 0) {
+    for (const [key, value] of Object.entries(localStorage)) {
       const newResultCard = document.createElement("div");
       const newId = Date.now().toString(4);
       newResultCard.classList.add("results-card");
       newResultCard.setAttribute("data-state", "fetched");
-      newResultCard.innerHTML = `<p class="user-url">${enteredURL}</p>
+      newResultCard.innerHTML = `<p class="user-url" data-id="${key}">${key}</p>
       <hr />
-      <a class="short-url" data-id=${newId} href="${result.result_url}">${result.result_url}</a>
+      <a class="short-url" data-id=${newId} href="${value}">${value}</a>
       <button class="copy-button" data-id=${newId} data-state="unpressed" onclick="copy(this)">Copy</button>`;
       results.appendChild(newResultCard);
     }
-  } catch (err) {
-    console.log("here!!!!");
-    console.error(err);
-    // field.classList.add("err");
-    // error.innerHTML = "Please enter a correct link";
   }
-}
+};
+
+getItems();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
