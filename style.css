@@ -13,24 +13,35 @@
 }
 /* Typography */
 body {
-  /* font-size: clamp(1rem, 0.643rem + 0.952vw, 1.5rem); */
+  font-size: 18px;
   font-family: "Poppins", sans-serif;
 }
 
+/* From 40 to 72px */
 h1 {
   color: var(--textdark1);
   font-weight: var(--bold);
-  font-size: clamp(2.5rem, 0.714rem + 4.762vw, 5rem);
+  font-size: clamp(2.5rem, 1.84rem + 2.817vw, 4.375rem);
   line-height: 1.2;
+}
+/* From 18 to 20px */
+.hero-text p {
+  color: var(--textlight1);
+  font-size: clamp(1.125rem, 1.081rem + 0.188vw, 1.25rem);
+  max-width: 40ch;
 }
 p {
   color: var(--textlight1);
   max-width: 50ch;
 }
+/* From 27 to 40px*/
 h2 {
+  font-size: clamp(1.688rem, 1.401rem + 1.221vw, 2.5rem);
   color: var(--textdark1);
 }
-header a {
+header a,
+.sign-up {
+  font-size: 15px;
   color: white;
 }
 .copy-button {
@@ -48,9 +59,13 @@ header a {
 #statistics .card p {
   line-height: normal;
 }
+
 h4 {
-  /* font-size: clamp(1.5rem, 0.786rem + 1.905vw, 2.5rem); */
+  font-size: 20px;
   color: var(--textdark1);
+}
+.card p {
+  font-size: 16px;
 }
 .boost-container h2 {
   color: white;
@@ -62,7 +77,7 @@ a {
 
 @media (min-width: 900px) {
   header a {
-    color: var(--textlight2);
+    color: var(--textlight1);
   }
 }
 header a {
@@ -71,10 +86,11 @@ header a {
 footer p {
   color: white;
   font-weight: var(--bold);
+  font-size: 16px;
 }
 footer a {
   font-weight: var(--medium);
-  /* font-size: clamp(0.938rem, 0.625rem + 0.833vw, 1.375rem); */
+  font-size: 15px;
 }
 ul {
   list-style: none;
@@ -137,6 +153,13 @@ button:focus {
 .copy-button[data-state="unpressed"]:focus {
   background-color: hsl(180, 68%, 79%);
 }
+@media (min-width: 900px) {
+  .copy-button[data-state="pressed"] {
+    max-width: 107.38px;
+    display: flex;
+    justify-content: center;
+  }
+}
 .navbar a:hover,
 .navbar a:focus,
 #results a:hover,
@@ -190,8 +213,13 @@ button {
 .get-started,
 .sign-up {
   background-color: var(--accent);
-  padding: 0.7rem 2.4rem;
   border-radius: 5rem;
+}
+.get-started {
+  padding: 0.7rem 2.4rem;
+}
+.sign-up {
+  padding: 0.7rem 1.5rem;
 }
 .shorten-button {
   background-color: var(--accent);
@@ -216,12 +244,17 @@ button {
   margin: 0 auto;
   padding-block: 1rem;
   padding-inline: 1.5rem;
-  max-width: 1000px;
-  outline: 1px black solid;
+  max-width: 1270px;
+  /* outline: 1px black solid; */
 }
 @media (min-width: 600px) and (max-width: 899px) {
   .container {
     padding-inline: clamp(1.5rem, -7.5rem + 24vw, 6rem);
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    padding-inline: clamp(3rem, -2rem + 8.889vw, 6rem);
   }
 }
 .mobile-menu {
@@ -247,6 +280,11 @@ button {
 /* Mobile */
 
 /* Navigation Mobile */
+header li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media (max-width: 899px) {
   header {
     position: fixed;
@@ -334,6 +372,8 @@ button {
     display: none;
   }
   .navbar {
+    padding-top: 1rem;
+
     display: flex;
     align-items: center;
   }
@@ -387,11 +427,18 @@ button {
 
 /* Hero Desktop */
 @media (min-width: 900px) {
+  #hero {
+    padding-top: 2rem;
+  }
   .hero-container {
     display: grid;
-    gap: 3rem;
-    grid-template-columns: 50% 1fr;
+    gap: 4rem;
+    justify-content: space-between;
+    grid-template-columns: 55% 1fr;
     align-items: center;
+  }
+  #hero p {
+    margin-bottom: 2rem;
   }
 }
 
@@ -424,6 +471,9 @@ form input {
   .input-div {
     flex-basis: 100%;
     position: relative;
+  }
+  #input {
+    padding-left: 1.5rem;
   }
   form input {
     width: 100%;
@@ -481,7 +531,7 @@ form input {
 @media (min-width: 900px) {
   .results-card {
     display: grid;
-    grid-template-columns: 40% auto;
+    grid-template-columns: 45% auto;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
@@ -499,7 +549,6 @@ form input {
   .results-card p {
     word-wrap: break-word;
   }
-
   .copy-button {
     padding-inline: 2rem;
   }
@@ -510,6 +559,9 @@ form input {
 #statistics p {
   text-align: center;
   margin-top: 1rem;
+}
+#statistics {
+  padding-top: 2rem;
 }
 .statistics-text {
   margin-inline: auto;
@@ -561,8 +613,14 @@ form input {
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+
     gap: 2rem;
     position: relative;
+  }
+
+  .card-container {
+    display: flex;
   }
   .grid .card-2 {
     top: 40px;
@@ -585,6 +643,7 @@ form input {
     left: 100%;
   }
   #statistics {
+    padding-top: 4rem;
     padding-bottom: calc(2rem + 80px);
   }
 }
@@ -631,6 +690,9 @@ footer p {
   gap: 1.5rem;
   align-items: center;
   margin-bottom: 0;
+}
+.socials a {
+  display: flex;
 }
 
 /* Footer Desktop */
