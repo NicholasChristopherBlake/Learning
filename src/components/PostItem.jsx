@@ -1,15 +1,18 @@
 import React from "react";
+import MyButton from "./UI/button/MyButton";
 
-export default function PostItem({ post }) {
+export default function PostItem({ post, number, remove }) {
   return (
     <div className="post">
       <div className="post__body">
         <strong>
-          {post.id}. {post.title}
+          {number}. {post.title}
         </strong>
         <p>{post.body}</p>
       </div>
-      <button className="button__delete">Delete</button>
+      <MyButton onClick={() => remove(post)} className="button__delete">
+        Delete
+      </MyButton>
     </div>
   );
 }
