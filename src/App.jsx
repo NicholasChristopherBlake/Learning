@@ -1,49 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/App.css";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
-import MySelect from "./components/UI/select/MySelect";
+import PostFilter from "./components/PostFilter";
+import MyModal from "./components/UI/modal/MyModal";
+import MyButton from "./components/UI/button/MyButton";
+import { usePosts } from "./hooks/usePosts";
+import PostService from "./API/PostService";
+import Loader from "./components/UI/loader/Loader";
 
 function App() {
-  const [posts, setPosts] = useState([
-    { id: 1, title: "Javascript", body: "z" },
-    { id: 2, title: "Python", body: "aaa" },
-    { id: 3, title: "Babel", body: "b" },
-  ]);
-  const [selectedSort, setSelectedSort] = useState("");
+  const [posts, setPosts] = useState([]);
+  const [filter, setFilter] = useState({
+    sort: "",
+    query: "",
+  });
+  const [modal, setModal] = useState(false);
+  const [isPostsLoading, setIsPostsLoading] = useState(false);
+
+  useEffect(() => fetchPosts(), []);
+
+  async function fetchPosts() {
+    setIsPostsLoading(true);
+    setTimeout(async () => {
+      const posts = await PostService.getAll();
+      setPosts(posts);
+      setIsPostsLoading(false);
+    }, 1500);
+  }
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
+    setModal(false);
   };
 
   const removePost = (post) => {
     setPosts(posts.filter((p) => p.id !== post.id));
   };
 
-  const sortPosts = (sort) => {
-    setSelectedSort(sort);
-    setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
-  };
+  const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
   return (
     <div className="App">
-      <PostForm create={createPost} />
+      <MyButton style={{ marginTop: "1.5rem" }} onClick={() => setModal(true)}>
+        Create user
+      </MyButton>
+      <MyModal visible={modal} setVisible={setModal}>
+        <PostForm create={createPost} />
+      </MyModal>
       <hr style={{ margin: "15px 0" }} />
-      <MySelect
-        value={selectedSort}
-        onChange={sortPosts}
-        defaultValue="Sorting"
-        options={[
-          { value: "title", name: "By name" },
-          { value: "body", name: "By description" },
-        ]}
-      />
-      {posts.length ? (
-        <PostList remove={removePost} posts={posts} title="Javascript posts" />
+      <PostFilter filter={filter} setFilter={setFilter} />
+      {isPostsLoading ? (
+        <Loader />
       ) : (
-        <h1 style={{ textAlign: "center", marginTop: "1rem" }}>
-          No Current Posts
-        </h1>
+        <PostList
+          remove={removePost}
+          posts={sortedAndSearchedPosts}
+          title="Javascript posts"
+        />
       )}
     </div>
   );
