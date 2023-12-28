@@ -8,6 +8,7 @@ import MyButton from "./components/UI/button/MyButton";
 import { usePosts } from "./hooks/usePosts";
 import PostService from "./API/PostService";
 import Loader from "./components/UI/loader/Loader";
+import { useFetching } from "./hooks/useFetching";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -16,18 +17,12 @@ function App() {
     query: "",
   });
   const [modal, setModal] = useState(false);
-  const [isPostsLoading, setIsPostsLoading] = useState(false);
 
+  const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
+    const response = await PostService.getAll();
+    setPosts(response.data);
+  });
   useEffect(() => fetchPosts(), []);
-
-  async function fetchPosts() {
-    setIsPostsLoading(true);
-    setTimeout(async () => {
-      const posts = await PostService.getAll();
-      setPosts(posts);
-      setIsPostsLoading(false);
-    }, 1500);
-  }
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -50,6 +45,9 @@ function App() {
       </MyModal>
       <hr style={{ margin: "15px 0" }} />
       <PostFilter filter={filter} setFilter={setFilter} />
+      {postError && (
+        <h1 style={{ color: "red", textAlign: "center" }}>{postError}</h1>
+      )}
       {isPostsLoading ? (
         <Loader />
       ) : (
