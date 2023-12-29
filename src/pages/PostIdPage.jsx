@@ -17,7 +17,6 @@ const PostIdPage = () => {
   const [fetchComments, isComLoading, comError] = useFetching(async () => {
     const response = await PostService.getCommentsByPostId(params.id);
     setComments(response.data);
-    console.log(response.data);
   });
 
   useEffect(() => {
@@ -28,6 +27,9 @@ const PostIdPage = () => {
   return (
     <div>
       {error && <h1 style={{ color: "red", textAlign: "center" }}>{error}</h1>}
+      {comError && (
+        <h1 style={{ color: "red", textAlign: "center" }}>{comError}</h1>
+      )}
       <div>
         <h1>You've opened a post page with id = {params.id}</h1>
 
