@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { privateRoutes, publicRoutes } from "../router";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { AuthContext } from "../context";
+import Loader from "./UI/loader/Loader";
 
 const AppRouter = () => {
-  const isAuth = true;
+  const { isAuth, isLoading } = useContext(AuthContext);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return isAuth ? (
     <Routes>
       {privateRoutes.map((route) => {
@@ -15,50 +22,16 @@ const AppRouter = () => {
           />
         );
       })}
+      <Route path="*" element={<Navigate to="/posts" replace={true} />} />
     </Routes>
   ) : (
     <Routes>
       {publicRoutes.map((route) => (
-        <Route component={route.component} path={route.path} />
+        <Route element={<route.element />} path={route.path} key={route.path} />
       ))}
+      <Route path="*" element={<Navigate to="/login" replace={true} />} />
     </Routes>
   );
 };
 
 export default AppRouter;
-
-// const privateRoutes = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//     errorElement: <ErrorPage />,
-//     children: [
-//       { path: "/*", element: <Navigate to="/posts" replace={true} /> },
-//       {
-//         path: "posts",
-//         element: <Posts />,
-//       },
-//       { path: "posts/:id", element: <PostIdPage /> },
-//       {
-//         path: "about",
-//         element: <About />,
-//       },
-//     ],
-//   },
-// ]);
-
-// const publicRoutes = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//     errorElement: <ErrorPage />,
-
-//     children: [
-//       { path: "/*", element: <Navigate to="/login" replace={true} /> },
-//       {
-//         path: "login",
-//         element: <Login />,
-//       },
-//     ],
-//   },
-// ]);

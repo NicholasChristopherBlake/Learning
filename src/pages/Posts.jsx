@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/App.css";
 import PostList from "../components/PostList";
 import PostForm from "../components/PostForm";
@@ -11,6 +11,8 @@ import Loader from "../components/UI/loader/Loader";
 import { useFetching } from "../hooks/useFetching";
 import { getPagesCount } from "../utils/pages";
 import Pagination from "../components/UI/pagination/Pagination";
+import { useObserver } from "../hooks/useObserver";
+import MySelect from "../components/UI/select/MySelect";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -23,17 +25,24 @@ function Posts() {
   const [limit, setLimit] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+  const lastElement = useRef();
 
-  const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
-    const response = await PostService.getAll(limit, currentPage);
-    setPosts(response.data);
-    const totalCount = response.headers["x-total-count"];
-    setTotalPages(getPagesCount(totalCount, limit));
+  const [fetchPosts, isPostsLoading, postError] = useFetching(
+    async (limit, currentPage) => {
+      const response = await PostService.getAll(limit, currentPage);
+      setPosts([...posts, ...response.data]);
+      const totalCount = response.headers["x-total-count"];
+      setTotalPages(getPagesCount(totalCount, limit));
+    }
+  );
+
+  useObserver(lastElement, currentPage < totalPages, isPostsLoading, () => {
+    setCurrentPage(currentPage + 1);
   });
 
   useEffect(() => {
-    fetchPosts();
-  }, [currentPage]);
+    fetchPosts(limit, currentPage);
+  }, [currentPage, limit]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -54,18 +63,30 @@ function Posts() {
       </MyModal>
       <hr style={{ margin: "15px 0" }} />
       <PostFilter filter={filter} setFilter={setFilter} />
+      <MySelect
+        value={limit}
+        onChange={(value) => setLimit(value)}
+        defaultValue="Change limit of loading posts"
+        options={[
+          { value: 5, name: "5" },
+          { value: 10, name: "10" },
+          { value: 20, name: "20" },
+          { value: -1, name: "All" },
+        ]}
+      />
       {postError && (
         <h1 style={{ color: "red", textAlign: "center" }}>{postError}</h1>
       )}
-      {isPostsLoading ? (
-        <Loader />
-      ) : (
-        <PostList
-          remove={removePost}
-          posts={sortedAndSearchedPosts}
-          title="Javascript posts"
-        />
-      )}
+      <PostList
+        remove={removePost}
+        posts={sortedAndSearchedPosts}
+        title="Javascript posts"
+      />
+      <div
+        ref={lastElement}
+        style={{ height: "20px", backgroundColor: "red" }}
+      />
+      {isPostsLoading && <Loader />}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
