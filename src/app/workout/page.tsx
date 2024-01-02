@@ -1,21 +1,28 @@
-import InputWorkout from "@/components/ui/input-workout";
-import React from "react";
+"use client";
+import AddExerciseForm from "@/components/workout/AddExerciseForm";
+import ExerciseList from "@/components/workout/ExerciseList";
+import React, { useState } from "react";
+
+interface IExercise {
+  exercise: string;
+  weight: number;
+  sets: number;
+  reps: number;
+}
 
 export default function Page() {
+  const [exerciseList, setExerciseList] = useState<IExercise[]>([]);
+  const addExercise = (formData: IExercise) => {
+    console.log(formData);
+    setExerciseList([...exerciseList, formData]);
+    console.log(exerciseList);
+  };
+
   return (
     <div className="text-center mx-auto">
       <h1>Create new program</h1>
-      <div>
-        <h2>Your exercises</h2>
-      </div>
-      <form action="" className="flex flex-shrink gap-2 flex-wrap ">
-        <InputWorkout type="text" placeholder="Enter exercise" />
-        <InputWorkout type="number" placeholder="Weight" />
-        <InputWorkout type="number" placeholder="Sets" />
-        <InputWorkout type="number" placeholder="Reps" />
-        <input type="text" />
-        <button type="submit">Add</button>
-      </form>
+      <ExerciseList list={exerciseList} />
+      <AddExerciseForm onSubmit={addExercise} />
     </div>
   );
 }
