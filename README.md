@@ -3,7 +3,7 @@
 ## Tech Stack:
 
 React 18
-NextJS 14
+NextJS 14 (with Turbopack on dev)
 TypeScript 5
 Tailwind CSS 3
 
