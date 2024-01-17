@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CalendarLib from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
-export default function Calendar({ onClick }) {
+export default function Calendar({ onClick }: { onClick: any }) {
   type ValuePiece = Date | null;
 
   type Value = ValuePiece | [ValuePiece, ValuePiece];

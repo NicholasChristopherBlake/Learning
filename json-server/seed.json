@@ -3,12 +3,9 @@
     { "id": 1, "username": "admin", "password": "admin", "role": "ADMIN" },
     { "id": 2, "username": "user", "password": "user", "role": "USER" }
   ],
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" },
   "all-programs": [
     {
-      "date": "Wed Jan 17 2024",
+      "date": "17-01-2024",
       "today-programs": [
         {
           "id": 1,
