@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import ExerciseList from "./ExerciseList";
 
 function AddNewProgramModal({ visible }: { visible: boolean }) {
