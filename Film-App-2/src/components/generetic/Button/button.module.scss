@@ -1,0 +1,93 @@
+.button {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  width: max-content;
+  max-width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  background: $grey-items;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(#000, .2);
+  transition: .2s;
+  i {
+    line-height: 0em;
+  }
+  &:hover {
+    background: #585858;
+  }
+  &.buttonLoading {
+    .loader {
+      opacity: 1;
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  left: 0;
+  top: 0;
+  transition: .2s;
+  background: inherit;
+  z-index: 2;
+  opacity: 0;
+  & > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  svg {
+    width: 26px;
+    height: 26px;
+    max-height: 90%;
+  }
+}
+
+.default {
+  background: $grey-items;
+}
+
+.primary {
+  background: $accent;
+  &:hover {
+    background: #D83F3F;
+  }
+}
+
+.small {
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+.middle {
+  font-size: 18px;
+  padding: 9px 20px;
+}
+
+.large {
+  font-size: 22px;
+  padding: 10px 22px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: -3px;
+}
+
+.onlyIcon {
+  padding: 10px;
+  line-height: 0em;
+  .icon {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
