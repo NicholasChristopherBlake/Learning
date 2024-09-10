@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "id": 1,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "id": 4,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "id": 8,
+      "title": "UPDATED TITLE",
+      "body": "typicode"
+    },
+    {
+      "id": 9,
+      "title": "123123",
+      "body": "typicode"
+    },
+    {
+      "id": 10,
+      "title": "json-server",
+      "body": "typicode"
+    },
+    {
+      "title": "takes",
+      "body": "takes",
+      "id": 12
+    },
+    {
+      "title": "123",
+      "body": "123",
+      "id": 15
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
