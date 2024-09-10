@@ -1,0 +1,73 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#hero {
+    background-color: #F3EED9;
+    min-height: 660px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+}
+#hero h1 {
+    color: #824936;
+    font-size: 60px;
+}
+#hero p {
+    text-transform: uppercase;
+}
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#designs {
+    padding: 4rem;
+}
+#designs h2 {
+    color: #824936;
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+}
+#designs p {
+    font-size: 21px;
+}
+.two-columns {
+    display: flex;
+    gap: 2rem;
+}
+.two-columns > * {
+    border: 1px solid pink;
+    width: 100%;
+    flex: 1;
+}
+.two-columns h2 {
+    margin-bottom: 1rem;
+}
+#top {
+    background-color: #222C2A;
+    color: white;
+    padding: 4rem;
+}
+#top > * {
+    border: 2px pink solid;
+}
+#bottom {
+    background-color: #824936;
+    color: white;
+    padding: 4rem;
+}
+.text {
+    width: 100%;
+}
+.img {
+    width: 100px;
+}
