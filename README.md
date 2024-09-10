@@ -1,0 +1,1 @@
+**My Learning repository with all the old stuff, including FreeCodeCamp, Coursera, FrontendMentor, NextJS and React fundamentals. As well as: Fighting Game, Calendar App, Weather App, Movies App, some of them were not finished.**
