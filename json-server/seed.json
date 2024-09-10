@@ -1,0 +1,73 @@
+{
+  "users": [
+    { "id": 1, "username": "admin", "password": "admin", "role": "ADMIN" },
+    { "id": 2, "username": "user", "password": "user", "role": "USER" }
+  ],
+  "all-programs": [
+    {
+      "date": "17-01-2024",
+      "today-programs": [
+        {
+          "id": 1,
+          "type": "general",
+          "exercises": [
+            {
+              "id": 1,
+              "name": "Bench Press",
+              "warmup-sets": [
+                { "id": 1, "weight": 20, "reps": 10, "comment": "beginning" },
+                {
+                  "id": 2,
+                  "weight": 40,
+                  "reps": 8,
+                  "comment": "did it"
+                }
+              ],
+              "working-sets": [
+                { "id": 1, "weight": 60, "reps": 8, "comment": "easy" },
+                { "id": 2, "weight": 65, "reps": 8, "comment": "" },
+                { "id": 3, "weight": 70, "reps": 6, "comment": "" }
+              ]
+            },
+            {
+              "id": 2,
+              "name": "Pull Ups",
+              "warmup-sets": [
+                { "id": 1, "weight": 20, "reps": 10, "comment": "beginning" },
+                {
+                  "id": 2,
+                  "weight": 40,
+                  "reps": 8,
+                  "comment": "did it"
+                }
+              ],
+              "working-sets": [
+                { "id": 1, "weight": 60, "reps": 8, "comment": "easy" },
+                { "id": 2, "weight": 65, "reps": 8, "comment": "" },
+                { "id": 3, "weight": 70, "reps": 6, "comment": "" }
+              ]
+            },
+            {
+              "id": 3,
+              "name": "Biceps Curls",
+              "warmup-sets": [
+                { "id": 1, "weight": 20, "reps": 10, "comment": "beginning" },
+                {
+                  "id": 2,
+                  "weight": 40,
+                  "reps": 8,
+                  "comment": "did it"
+                }
+              ],
+              "working-sets": [
+                { "id": 1, "weight": 60, "reps": 8, "comment": "easy" },
+                { "id": 2, "weight": 65, "reps": 8, "comment": "" },
+                { "id": 3, "weight": 70, "reps": 6, "comment": "" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
