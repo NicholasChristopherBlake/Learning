@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css?family=Unica+One|Vollkorn");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.header-pseudo {
+  font-size: 4rem;
+  position: relative;
+  display: inline-block;
+  font-family: "Unica One";
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: #c31;
+}
+.header-pseudo::before, .header-pseudo::after {
+  content: "";
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+}
+.header-pseudo::before {
+  background: #c31;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -2;
+}
+.header-pseudo::after {
+  height: 101%;
+  background: white;
+  left: -0.3em;
+  right: -0.3em;
+  z-index: -1;
+}
+
+.card1-hover {
+  position: relative;
+  margin: 1em;
+  background: rgba(0, 0, 0, 0.7);
+}
+.card1-hover p {
+  margin-top: 0.25em;
+}
+.card1-hover h3 {
+  font-family: "Unica One";
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+.card1-hover::before, .card1-hover::after {
+  content: "";
+  position: absolute;
+  top: 1.25em;
+  bottom: 1.25em;
+  left: 1.25em;
+  right: 1.25em;
+  opacity: 1;
+  transition: transform ease-out 250ms;
+}
+.card1-hover::before {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transform: scale(0, 1);
+}
+.card1-hover::after {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  transform: scale(1, 0);
+}
+.card1-hover:hover::before {
+  transform: scale(1.05, 1);
+}
+.card1-hover:hover::after {
+  transform: scale(1, 1.05);
+}
+
+.card1-hover--img {
+  max-width: 100%;
+  display: block;
+  transition: opacity ease-out 250ms;
+}
+
+.card1-hover:hover .card1-hover--img {
+  opacity: 0.4;
+}
+
+.card1-hover--text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  transition: opacity ease-out 250ms;
+}
+
+.card1-hover:hover .card1-hover--text {
+  opacity: 1;
+}
+
+.card1-hover--title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0;
+}
+
+.grid-hamburger-button-container {
+  padding: 0.5rem;
+  display: flex;
+}
+.grid-hamburger-button-container button {
+  background: transparent;
+  border: 10px solid var(--button-color, #000);
+  border-radius: 1rem;
+  flex-basis: 100%;
+  transform: scale(0.4);
+  cursor: pointer;
+}
+
+/* button one */
+.grid-hamburger-button-container .button-one {
+  --button-color: #333;
+}
+.grid-hamburger-button-container .button-one .line {
+  transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+  transform-origin: center;
+}
+.grid-hamburger-button-container .button-one[aria-expanded=true] .line {
+  transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+}
+.grid-hamburger-button-container .button-one[aria-expanded=true] :is(.top, .bottom) {
+  y: 45;
+}
+.grid-hamburger-button-container .button-one[aria-expanded=true] .top {
+  rotate: 45deg;
+}
+.grid-hamburger-button-container .button-one[aria-expanded=true] .middle {
+  opacity: 0;
+}
+.grid-hamburger-button-container .button-one[aria-expanded=true] .bottom {
+  rotate: -45deg;
+}
+
+/* button two */
+.grid-hamburger-button-container .button-two {
+  --button-color: #232;
+}
+.grid-hamburger-button-container .button-two[data-state=closed] :is(.top, .bottom) {
+  animation: to-open-icon 1s forwards;
+}
+.grid-hamburger-button-container .button-two[data-state=opened] :is(.top, .bottom) {
+  animation: to-close-icon 1s forwards;
+}
+.grid-hamburger-button-container .button-two .hamburger {
+  transition: rotate 800ms 100ms;
+}
+.grid-hamburger-button-container .button-two[data-state=opened] .hamburger {
+  rotate: 1turn;
+}
+.grid-hamburger-button-container .button-two .line.top {
+  --rotation: -45deg;
+  transform-origin: 65px 45px;
+}
+.grid-hamburger-button-container .button-two .line.bottom {
+  --rotation: 45deg;
+  transform-origin: 60px 55px;
+}
+@keyframes to-close-icon {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 79.9;
+  }
+  60% {
+    stroke-dashoffset: 79.9;
+    rotate: calc(var(--rotation));
+  }
+  100% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+}
+@keyframes to-open-icon {
+  0% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+  40% {
+    stroke-dashoffset: 79.9;
+    rotate: var(--rotation);
+  }
+  60% {
+    stroke-dashoffset: 79.9;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.grid-hamburger-button-container .button-three {
+  --button-color: black;
+  overflow: hidden;
+}
+.grid-hamburger-button-container .button-three .hamburger {
+  transition: translate 1s, rotate 1s;
+}
+.grid-hamburger-button-container .button-three[aria-expanded=true] .hamburger {
+  translate: 10px -10px;
+  rotate: 0.125turn;
+}
+.grid-hamburger-button-container .button-three .line {
+  transition: 1s;
+  stroke-dasharray: 60 31 60 300;
+}
+.grid-hamburger-button-container .button-three[aria-expanded=true] .line {
+  stroke-dasharray: 60 105 60 300;
+  stroke-dashoffset: -90;
+}
+
+.grid-modal-window1 {
+  /* extra styling */
+}
+.grid-modal-window1 .modal {
+  background: #fff;
+  color: #222;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0;
+}
+.grid-modal-window1 .modal-content {
+  padding: 1rem;
+}
+.grid-modal-window1 .modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+.grid-modal-window1 .modal[open] {
+  animation: slide-up 1000ms forwards, fade-in 500ms forwards;
+}
+.grid-modal-window1 .modal[open]::backdrop {
+  animation: fade-in 500ms forwards;
+}
+.grid-modal-window1 .modal[closing] {
+  display: block;
+  pointer-events: none;
+  inset: 0;
+  animation: fade-out 500ms forwards;
+}
+.grid-modal-window1 .modal[closing]::backdrop {
+  animation: fade-out 500ms forwards;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.grid-modal-window1 .modal {
+  max-width: 50ch;
+}
+.grid-modal-window1 h1 {
+  text-underline-offset: 0.25em;
+  padding: 1rem;
+}
+.grid-modal-window1 h2 {
+  color: rgb(56, 204, 204);
+}
+.grid-modal-window1 .button {
+  border: 0;
+  cursor: pointer;
+  background: rgb(214, 214, 214);
+  color: rgb(97, 97, 97);
+  font-weight: 700;
+  padding: 1em 3em;
+}
+.grid-modal-window1 .button:hover,
+.grid-modal-window1 .button:focus {
+  background: rgb(56, 204, 204);
+}
+
+.grid-neon-button1 {
+  display: grid;
+  place-items: center;
+  background: hsl(323, 21%, 16%);
+  font-family: "Balsamiq Sans", cursive;
+  color: hsl(317, 100%, 54%);
+  padding: 3rem;
+}
+.grid-neon-button1 .neon-button1 {
+  font-size: 4rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(317, 100%, 54%);
+  border: hsl(317, 100%, 54%) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  z-index: 0;
+  text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 hsl(317, 100%, 54%), 0 0 0.5em 0 hsl(317, 100%, 54%);
+  position: relative;
+}
+.grid-neon-button1 .neon-button1::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: hsl(317, 100%, 54%);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+.grid-neon-button1 .neon-button1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 2em 0.5em hsl(317, 100%, 54%);
+  opacity: 0;
+  background-color: hsl(317, 100%, 54%);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+.grid-neon-button1 .neon-button1:hover,
+.grid-neon-button1 .neon-button1:focus {
+  color: hsl(323, 21%, 16%);
+  text-shadow: none;
+}
+.grid-neon-button1 .neon-button1:hover::before,
+.grid-neon-button1 .neon-button1:focus::before {
+  opacity: 1;
+}
+.grid-neon-button1 .neon-button1:hover::after,
+.grid-neon-button1 .neon-button1:focus::after {
+  opacity: 1;
+}
+
+body {
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Vollkorn";
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+  padding-top: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "header-pseudo header-pseudo header-pseudo" "card1-hover hamburger-buttons modal-window1" "neon-button1 . .";
+}
+
+.grid-card1-hover {
+  grid-area: card1-hover;
+}
+
+.grid-header-pseudo {
+  grid-area: header-pseudo;
+}
+
+.grid-hamburger-buttons {
+  grid-area: hamburger-buttons;
+}
+
+.grid-modal-window1 {
+  grid-area: modal-window1;
+}
+
+.grid-neon-button1 {
+  grid-area: neon-button1;
+}/*# sourceMappingURL=main.css.map */

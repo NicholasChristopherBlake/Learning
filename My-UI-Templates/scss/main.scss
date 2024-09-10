@@ -1,0 +1,47 @@
+@use './index' as *;
+@import url('https://fonts.googleapis.com/css?family=Unica+One|Vollkorn');
+
+body {
+  font-size: 1rem;
+  text-align: center;
+  font-family: $ff-s;
+  line-height: 1.4;
+  color: $clr-gray;
+}
+
+.container {
+  padding-top: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "header-pseudo header-pseudo header-pseudo"
+    "card1-hover hamburger-buttons modal-window1"
+    "neon-button1 . .";
+}
+
+.grid-card1-hover {
+  grid-area: card1-hover;
+}
+
+.grid-header-pseudo {
+  grid-area: header-pseudo;
+}
+
+.grid-hamburger-buttons {
+  grid-area: hamburger-buttons
+}
+
+.grid-modal-window1 {
+  grid-area: modal-window1;
+}
+
+.grid-neon-button1 {
+  grid-area: neon-button1
+}

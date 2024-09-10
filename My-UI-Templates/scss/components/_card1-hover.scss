@@ -1,0 +1,82 @@
+@use '../variables' as *;
+
+.card1-hover {
+  position: relative;
+  margin: 1em;
+  background: $clr-gray;
+
+  p {
+    margin-top: .25em;
+  }
+  h3 {
+    font-family: $ff-ss;
+    text-transform: uppercase;
+    line-height: .9;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 1.25em;
+    bottom: 1.25em;
+    left: 1.25em;
+    right: 1.25em;
+    opacity: 1;
+    transition: transform ease-out 250ms;
+  }
+
+  &::before {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    transform: scale(0,1);
+  }
+
+  &::after {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    transform: scale(1,0);
+  }
+
+  &:hover::before {
+    transform: scale(1.05, 1);
+  }
+
+  &:hover::after {
+    transform: scale(1, 1.05);
+  }
+
+}
+
+.card1-hover--img {
+  max-width: 100%;
+  display: block;
+  transition: opacity ease-out 250ms;
+
+}
+
+.card1-hover:hover {
+  .card1-hover--img {
+    opacity: .4;
+  }
+}
+
+.card1-hover--text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  transition: opacity ease-out 250ms;
+}
+
+.card1-hover:hover .card1-hover--text {
+  opacity: 1;
+}
+
+.card1-hover--title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0;
+}

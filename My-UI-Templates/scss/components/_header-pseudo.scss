@@ -1,0 +1,40 @@
+@use '../variables' as *;
+
+.header-pseudo {
+  font-size: 4rem;
+  position: relative;
+  display: inline-block;
+
+  font-family: $ff-ss;
+  text-transform: uppercase;
+  line-height: .9;
+  color: #c31;
+
+  &::before,
+  &::after {
+  content: '';
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    background: $clr-red;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+  }
+
+  &::after {
+    height: 101%;
+    background: white;
+    left: -.3em;
+    right: -.3em;
+    z-index: -1;
+  }
+}
+
+
+

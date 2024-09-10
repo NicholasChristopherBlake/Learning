@@ -1,0 +1,71 @@
+@use '../variables' as *;
+
+.grid-neon-button1 {
+    display: grid;
+    place-items: center;
+    background: $clr-bg;
+    font-family: "Balsamiq Sans", cursive;
+    color: $clr-neon;
+    padding: 3rem;
+  
+  .neon-button1 {
+    font-size: 4rem;
+  
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: $clr-neon;
+    border: $clr-neon 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    z-index: 0;
+  
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  
+    box-shadow: inset 0 0 0.5em 0 $clr-neon, 0 0 0.5em 0 $clr-neon;
+  
+    position: relative;
+  }
+  
+  .neon-button1::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: $clr-neon;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+  
+  .neon-button1::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 2em 0.5em $clr-neon;
+    opacity: 0;
+    background-color: $clr-neon;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+  
+  .neon-button1:hover,
+  .neon-button1:focus {
+    color: $clr-bg;
+    text-shadow: none;
+  }
+  
+  .neon-button1:hover::before,
+  .neon-button1:focus::before {
+    opacity: 1;
+  }
+  .neon-button1:hover::after,
+  .neon-button1:focus::after {
+    opacity: 1;
+  }
+}
+
