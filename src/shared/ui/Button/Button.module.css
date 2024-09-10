@@ -1,0 +1,9 @@
+.button-primary {
+  background-color: rgb(233, 95, 110);
+  background: linear-gradient(
+    180deg,
+    rgba(233, 95, 110, 1) 0%,
+    rgba(210, 77, 92, 1) 100%
+  );
+  color: white;
+}

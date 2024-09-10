@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/widgets/NewFilmsSlider/Arrows.jsx",
+    "src/widgets/SlideTitle.jsx",
+    "src/widgets/SlidesList.jsx",
+    "src/widgets/SlideImage.jsx",
+    "src/widgets/Slide.jsx",
+    "src/widgets/NewFilmsSlider.jsx",
+    "src/widgets/Dots.jsx",
+    "src/widgets/Dot.jsx",
+    "src/shared/ui/Search/Search.jsx",
+    "src/store/index.js",
+    "src/widgets/NewFilmsSlider/reducers/NewFilmsSlice.js",
+    "src/widgets/NewFilmsSlider/getNewFilms.js",
+    "src/widgets/NewFilmsSlider/getNewFilmInfo.js"
+  ],
+  "exclude": ["node_modules"]
+}
