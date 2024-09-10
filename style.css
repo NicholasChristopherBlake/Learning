@@ -1,0 +1,184 @@
+/* # Front-end Style Guide
+- Mobile: 375px
+- Desktop: 1440px
+
+- Red: hsl(1, 90%, 64%)
+- Blue: hsl(219, 85%, 26%)
+
+- White: hsl(0, 0%, 100%)
+- Very light grayish blue: hsl(210, 60%, 98%)
+- Light grayish blue 1: hsl(211, 68%, 94%)
+- Light grayish blue 2: hsl(205, 33%, 90%)
+- Grayish blue: hsl(219, 14%, 63%)
+- Dark grayish blue: hsl(219, 12%, 42%)
+- Very dark blue: hsl(224, 21%, 14%)
+
+- Font size (paragraph): 16px
+
+- Family: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
+- Weights: 500, 800
+font-family: 'Plus Jakarta Sans', sans-serif;
+*/
+
+@media (min-width: 415px) {
+  main {
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 3px hsl(211, 68%, 94%);
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: hsl(210, 60%, 98%);
+  }
+  section {
+    padding: 2rem 2rem 0 2rem;
+  }
+  nav {
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+
+@media (max-width: 414px) {
+  section {
+    padding: 1rem 1rem 0 1rem;
+  }
+  body {
+    height: 100vh;
+    background-color: white;
+  }
+  nav {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+p, a {
+  font-size: 14px;
+  color: hsl(219, 12%, 42%);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.first-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+nav h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: hsl(224, 21%, 14%);
+}
+nav .number {
+  border-radius: 7px;
+  background-color: hsl(219, 85%, 26%);
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 16px;
+  color: white;
+  font-weight: 800;
+}
+nav p {
+  font-weight: 500;
+}
+
+main {
+  background-color: white;
+  width: 100%;
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+article {
+  display: flex;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+}
+.with_picture {
+  justify-content: space-between;
+}
+.with_picture div:nth-child(1) {
+  display: flex;
+  gap: 1rem;
+}
+.check {
+  font-size: 7px;
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+}
+.avatar {
+  height: 40px;
+}
+.time {
+  color: hsl(219, 14%, 63%);
+}
+.name {
+  color: hsl(224, 21%, 14%);
+  font-weight: 800;
+  margin-right: 3px;
+}
+.post {
+  font-weight: 800;
+  margin-left: 3px;
+}
+.group {
+  font-weight: 800;
+  margin-left: 3px;
+}
+.message {
+  border: solid hsl(211, 68%, 94%) 1px;
+  padding: 0.8rem;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+.unread {
+  background-color: hsl(210, 60%, 98%)
+}
+.picture {
+  height: 40px;
+  
+  cursor: pointer;
+}
+
+.post:hover, .name:hover, .group:hover {
+  color: hsl(219, 85%, 26%);
+}
+.message:hover {
+  background-color: hsl(211, 68%, 94%);
+  cursor: pointer;
+}
+#all_read:hover {
+  color:hsl(219, 85%, 26%);
+  cursor: pointer;
+}
+/* .post:visited, .name:visited, .message:visited {
+  color:hsl(219, 85%, 26%);
+} */
+
+
+
+footer {
+  margin-top: 1rem;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); font-size: 11px;}

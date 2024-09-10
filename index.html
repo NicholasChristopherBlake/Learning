@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+
+</head>
+<body>
+  <main>
+    <nav>
+      <div class="first-row">      
+        <h1>Notifications</h1>
+        <p class="number">3</p>
+      </div> 
+      <p id="all_read">Mark all as read</p>
+    </nav>
+    <section>
+      <article class="unread">
+        <div>
+          <img class="avatar" src="./images/avatar-mark-webber.webp" alt="Avatar">
+        </div>
+        <div>
+          <p><a href="" class="name">Mark Webber</a> reacted to your recent post 
+            <a href="" class="post">My first tournament today!</a><span class="check">&#128308</span></p>
+          <p class="time">1m ago</p>
+        </div>
+      </article>
+      <article class="unread">
+        <div>
+          <img class="avatar" src="./images/avatar-angela-gray.webp" alt="Avatar">
+        </div>
+        <div>
+          <p><a href="" class="name">Angela Gray</a> followed you 
+            <span class="check">🔴</span></p>
+          <p class="time">5m ago</p>
+        </div>
+      </article>
+      <article class="unread">
+        <div>
+          <img class="avatar" src="./images/avatar-jacob-thompson.webp" alt="Avatar">
+        </div>
+        <div>
+          <p><a href="" class="name">Jacob Thompson</a> has joined your group 
+            <a href="" class="group">Chess Club</a><span class="check">🔴</span></p>
+          <p class="time">1 day ago</p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <img class="avatar" src="./images/avatar-rizky-hasanuddin.webp" alt="Avatar">
+        </div>
+        <div>
+          <p><a href="" class="name">Rizky Hasanuddin</a> sent you a private message 
+            <span class="check"></span></p>
+          <p class="time">5 days ago</p>
+          <div class="message">
+            <a href="">Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+              I'm already having lots of fun and improving my game.</a>
+          </div>
+        </div>
+      </article>
+      <article class="with_picture">
+        <div>
+          <div>
+            <img class="avatar" src="./images/avatar-kimberly-smith.webp" alt="Avatar">
+          </div>
+          <div>
+            <p><a href="" class="name">Kimberly Smith</a> commented on your picture
+              <span class="check"></span></p>
+            <p class="time">1 week ago</p>
+          </div>
+        </div>
+        <div>
+          <img class="picture" src="./images/image-chess.webp" alt="Image of Chess player">
+        </div>
+      </article>
+      <article>
+        <div>
+          <img class="avatar" src="./images/avatar-nathan-peterson.webp" alt="Avatar">
+        </div>
+        <div>
+          <p><a href="" class="name">Nathan Peterson</a> reacted to your recent post 
+            <a href="" class="post">5 end-game strategies to increase your win rate</a><span class="check"></span></p>
+          <p class="time">2 weeks ago</p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <img class="avatar" src="./images/avatar-anna-kim.webp" alt="Avatar">
+        </div>
+        <div>
+          <p><a href="" class="name"> Anna Kim</a> left the group 
+            <a href="" class="group">Chess Club</a><span class="check"></span></p>
+          <p class="time">2 weeks ago</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/NicholasChristopherBlake">Nicholas</a>.
+    </div>
+  </footer>
+  <script src="javascript.js"></script>
+</body>
+</html>
