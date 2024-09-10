@@ -1,0 +1,120 @@
+
+.thumbnail {
+  width: 100%;
+}
+.video-title {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.video-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+.profile-picture {
+  width: 36px;
+  border-radius: 50px;
+}
+.thumbnail-row {
+  margin-bottom: 8px;
+  position: relative;
+}
+.video-author,
+.video-stats {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+}
+.video-author {
+  margin-bottom: 4px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+@media (max-width: 750px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .video-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .video-author,
+  .video-stats {
+    font-size: 14px;
+  }
+  }
+
+.video-time {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  right: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 4px 4px 4px;
+  border-radius: 2px;
+}
+.video-title-link {
+  text-decoration: none;
+  color: black;
+}
+.channel-picture-container {
+  display: inline-block;
+  position: relative;
+}
+.channel-picture-tooltip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 2px 3px 10px rgba(0,0,0,0.3);
+  padding: 10px 10px 10px 15px;
+  width: 200px;
+  margin-right: 0;
+  
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 300;
+}
+.channel-picture-container:hover .channel-picture-tooltip {
+  opacity: 1;
+}
+.profile-picture-tooltip {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 8px;
+}
+
+.channel-picture-tooltip-first-row {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.channel-picture-tooltip-second-row {
+  color:rgb(96, 96, 96);
+  font-size: 14px;
+}
