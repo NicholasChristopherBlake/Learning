@@ -1,0 +1,381 @@
+/* font-family: 'Karla', sans-serif;
+font-family: 'Markazi Text', serif; */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  padding: 1rem 4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-family: 'Karla', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.link {
+  text-decoration: none;
+  color: #333333;
+}
+nav img {
+  flex: 1fr;
+  width: 148px;
+  height: 40px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 700px;
+}
+ul > li {
+  list-style: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 4rem;
+  font-family: 'Karla', sans-serif;
+}
+footer img {
+  height: 250px;
+}
+footer ul {
+  display: flex;
+  padding-top: 1rem;
+  flex-direction: column;
+  font-size: 18px;
+}
+footer p {
+  font-weight: bold;
+  color: #495E57;
+}
+footer ul > li:nth-child(2) {
+  margin-top: 0.7rem;
+}
+footer ul > li {
+  font-weight: medium;
+}
+
+@media (max-width: 1000px) {
+  header img {
+    left: 25%;
+    top: 15%;
+    width: 220px;
+    height: 250px;
+    position: relative;
+  }
+}
+@media (min-width: 1001px) {
+  header img {
+    right: 15vw;
+    height: 430px;
+    width: 375px;
+    position: absolute;
+  }
+}
+header {
+  background-color: #495E57;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  min-width: 760px;
+}
+.header-first-div {
+  flex: 1fr;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.header-second-div {
+  flex: 1fr;
+  min-width: 375px;
+}
+
+header img {
+  object-fit: cover;
+  border-radius: 40px;
+  /* transition: width 0.1s ease-in; */
+}
+header h1 {
+  color: #F4ce14;
+  font-size: 64px;
+  font-family: 'Markazi Text', serif;
+  font-weight: 500;
+  line-height: 70%;
+}
+
+header h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: normal;
+  color: white;
+  line-height: 80%;
+}
+header p {
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: medium;
+  color: white;
+  line-height: 140%;
+  margin: 1rem 0;
+  width: 280px;
+}
+header button {
+  padding: 13px 25px;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  background-color: #F4ce14;
+}
+main {
+  padding: 5rem 5rem 1rem 5rem;
+}
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-self: center;
+  column-gap: 1rem;
+}
+main article {
+  background-color: #edefee;
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 300px;
+}
+main .bottom {
+  padding: 0.5rem 1.3rem;
+  flex: 2;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+article img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 175px;
+  max-height: 175px;
+  border-radius: 25px 25px 0 0;
+  flex: 1;
+}
+.first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+article .name {
+  font-family: 'Markazi Text', serif;
+  font-size: 24px;
+  font-weight: medium;
+}
+.price {
+  color: #ee9972;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.main-text {
+  font-family: 'Karla', sans-serif;
+  color: #495E57;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+.delivery-div {
+  padding: 1rem 0;
+}
+.delivery-btn {
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+}
+.title-article {
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+  font-weight: medium;
+}
+.top-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.top-row button {
+  padding: 13px 25px;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  background-color: #F4ce14;
+}
+
+.customers-say {
+  padding: 2rem 4rem;
+}
+.customers-say .title {
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: medium;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.ratings-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+
+}
+.ratings {
+  display: grid;
+  grid-template-rows: 30px 1fr 70px;
+  row-gap: 0.5rem;
+  max-width: 200px;
+  background-color: #edefee;
+  border-radius: 30px;
+  padding: 2rem;
+  font-family: 'Karla', sans-serif;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.star {
+  height: 30px;
+}
+.customer-photo-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.customer-photo-row img {
+  height: 80px;
+  border-radius: 6px;
+}
+.customer-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.review-text {
+  font-size: 16px;
+}
+
+.story {
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+  align-items: center;
+}
+.left-side {
+  flex: 1;
+}
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.story img {
+  height: 300px;
+  max-width: 200px;
+  object-fit: cover;
+  object-position: 80%;
+  position: relative;
+}
+
+.story h1 {
+  color: #F4ce14;
+  font-size: 64px;
+  font-family: 'Markazi Text', serif;
+  font-weight: 500;
+  line-height: 70%;
+}
+
+.story h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: normal;
+  color: #333333;
+  line-height: 80%;
+}
+.story p {
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: medium;
+  color: #333333;
+  line-height: 140%;
+  margin: 1rem 0;
+}
+
+
+.confirmed-booking {
+  text-align: center;
+  margin: 4rem 0;
+  color: #333333
+}
+button {
+  cursor: pointer
+}
+.error-page {
+  text-align: center;
+  margin: 4rem 0;
+  color: red;
+}
+
+.form-title {
+  text-align: center;
+  margin: 2rem 0;
+  color: #333333
+}
+.form {
+  display: grid;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 20px;
+  font-family: 'Karla', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #edefee;
+  border-radius: 15px;
+  color: #333333
+}
+.form input, select {
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: medium;
+  padding-left: 5px;
+}
+.form input[type="submit"] {
+  padding: 13px 25px;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  background-color: #F4ce14;
+  cursor: pointer;
+}
